@@ -34,20 +34,56 @@ def state_prediction(history: pd.DataFrame, fixture: pd.Series):
     league_goal = (home_base + away_base) / 2
     def team_rates(team, home):
         side = prior[prior.home_team_id.eq(team)] if home else prior[prior.away_team_id.eq(team)]
+        context = "same-division"
+        # Newly promoted/relegated clubs can have little recent data in this
+        # division. Use their other tracked English-league matches, adjusted to
+        # the target division's goal level, rather than silently dropping them.
+        if len(side) < MIN_TEAM_GAMES:
+            side = history[(history.date < fixture.date) & (history.date >= fixture.date - pd.Timedelta(days=LOOKBACK_DAYS))]
+            side = side[side.home_team_id.eq(team)] if home else side[side.away_team_id.eq(team)]
+            context = "cross-division"
         if len(side) < MIN_TEAM_GAMES: return None
-        scored = side.home_goals if home else side.away_goals
-        conceded = side.away_goals if home else side.home_goals
+        side = side.copy()
+        side["w"] = np.exp(-math.log(2) * (fixture.date - side.date).dt.days.clip(lower=0) / HALF_LIFE_DAYS)
+        scored = (side.home_goals if home else side.away_goals).astype(float)
+        conceded = (side.away_goals if home else side.home_goals).astype(float)
+        if context == "cross-division":
+            source_goal = prior.groupby("league").apply(lambda x: np.average((x.home_goals + x.away_goals) / 2, weights=x.w), include_groups=False)
+            factors = side.league.map(source_goal).fillna(league_goal).rdiv(league_goal)
+            scored, conceded = scored * factors, conceded * factors
         # 6 equivalent prior matches makes newly promoted teams conservative.
         weight = side.w.sum(); shrink = 6
         return ((np.average(scored, weights=side.w) * weight + league_goal * shrink) / (weight + shrink),
-                (np.average(conceded, weights=side.w) * weight + league_goal * shrink) / (weight + shrink), len(side))
+                (np.average(conceded, weights=side.w) * weight + league_goal * shrink) / (weight + shrink), len(side), context)
     h, a = team_rates(fixture.home_team_id, True), team_rates(fixture.away_team_id, False)
     if not h or not a: return None
     # Geometric blend: a home attack meets an away defence, and vice versa.
     lh = math.sqrt((h[0] / home_base) * (a[1] / home_base)) * home_base
     la = math.sqrt((a[0] / away_base) * (h[1] / away_base)) * away_base
     hw, dr, aw = probability(lh, la)
-    return {"home_win": hw, "draw": dr, "away_win": aw, "expected_home_goals": lh, "expected_away_goals": la, "history_games": min(h[2], a[2])}
+    return {"home_win": hw, "draw": dr, "away_win": aw, "expected_home_goals": lh, "expected_away_goals": la, "history_games": min(h[2], a[2]), "context": "cross-division" if "cross-division" in (h[3], a[3]) else "same-division"}
+
+def season_outlook(completed, future, league):
+    """Monte Carlo finish using only pre-fixture information and Poisson goals."""
+    season = future.season.mode().iat[0]
+    played = completed[(completed.league == league) & (completed.season == season)]
+    teams = sorted(set(future.home_team) | set(future.away_team) | set(played.home_team) | set(played.away_team))
+    index = {team: i for i, team in enumerate(teams)}; n = 4000
+    points = np.zeros((n, len(teams)), dtype=int); gf = np.zeros_like(points); ga = np.zeros_like(points)
+    for _, m in played.iterrows():
+        h, a = index[m.home_team], index[m.away_team]; hg, ag = int(m.home_goals), int(m.away_goals)
+        gf[:,h] += hg; ga[:,h] += ag; gf[:,a] += ag; ga[:,a] += hg
+        points[:,h] += 3 if hg > ag else 1 if hg == ag else 0; points[:,a] += 3 if ag > hg else 1 if hg == ag else 0
+    rng = np.random.default_rng(20260909)
+    for _, m in future.iterrows():
+        pred = state_prediction(completed, m)
+        if not pred: return None
+        h, a = index[m.home_team], index[m.away_team]; hg, ag = rng.poisson(pred["expected_home_goals"], n), rng.poisson(pred["expected_away_goals"], n)
+        gf[:,h] += hg; ga[:,h] += ag; gf[:,a] += ag; ga[:,a] += hg
+        points[:,h] += (hg > ag) * 3 + (hg == ag); points[:,a] += (ag > hg) * 3 + (hg == ag)
+    winners = np.array([np.lexsort((-gf[i], -(gf[i]-ga[i]), -points[i]))[0] for i in range(n)])
+    ranking = sorted(((teams[i], int((winners == i).sum())) for i in range(len(teams))), key=lambda x: x[1], reverse=True)[:5]
+    return {"season": season, "simulations": n, "teams": [{"team": t, "win_probability": round(w / n, 4)} for t, w in ranking]}
 
 def outcome(hg, ag): return 0 if hg > ag else 1 if hg == ag else 2
 def evaluate(completed):
@@ -77,18 +113,20 @@ def main():
     completed[["home_goals", "away_goals"]] = completed[["home_goals", "away_goals"]].astype(int)
     report = evaluate(completed); OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "evaluation.json").write_text(json.dumps(report, indent=2), encoding="utf8")
-    predictions = {"generated_at": datetime.now().astimezone().isoformat(timespec="minutes"), "source": "openfootball/england", "leagues": {}}
+    predictions = {"generated_at": datetime.now().astimezone().isoformat(timespec="minutes"), "source": "openfootball/england", "leagues": {}, "season_outlook": {}}
     for league in sorted(matches.league.unique()):
         fixtures = matches[(matches.league == league) & (matches.status == "upcoming")].sort_values("date")
         cards = []
         for _, fixture in fixtures.iterrows():
             pred = state_prediction(completed, fixture)
-            if pred:
-                cards.append({"date": fixture.date.date().isoformat(), "kickoff": fixture.kickoff if pd.notna(fixture.kickoff) else None, "home_team": fixture.home_team, "away_team": fixture.away_team, **{k: round(v, 4) if isinstance(v, float) else v for k,v in pred.items()}})
+            card = {"date": fixture.date.date().isoformat(), "kickoff": fixture.kickoff if pd.notna(fixture.kickoff) else None, "home_team": fixture.home_team, "away_team": fixture.away_team, "prediction_available": bool(pred)}
+            if pred: card.update({k: round(v, 4) if isinstance(v, float) else v for k,v in pred.items()})
+            cards.append(card)
         predictions["leagues"][league] = cards
+        if league in ("premier-league", "championship") and len(fixtures): predictions["season_outlook"][league] = season_outlook(completed, fixtures, league)
     (OUT / "predictions.json").write_text(json.dumps(predictions, indent=2), encoding="utf8")
     # Keep display-only colour configuration beside the generated JSON so the
     # static frontend never needs a backend or a hard-coded second colour list.
     (OUT / "team_colours.json").write_text((ROOT / "config" / "team_colours.json").read_text(encoding="utf8"), encoding="utf8")
-    print(f"Wrote {sum(map(len, predictions['leagues'].values()))} reliable upcoming predictions")
+    print(f"Wrote {sum(map(len, predictions['leagues'].values()))} upcoming fixtures")
 if __name__ == "__main__": main()
