@@ -1,0 +1,29 @@
+{
+  "validation": "chronological final 20% (evenly-spaced sample, max 600 fixtures)",
+  "fixtures": 540,
+  "accuracy": 0.515,
+  "log_loss": 1.026,
+  "brier_score": 0.616,
+  "baseline_accuracy": 0.456,
+  "baseline_log_loss": 1.064,
+  "calibration": [
+    {
+      "range": "0.2-0.4",
+      "n": 148,
+      "mean_confidence": 0.385,
+      "accuracy": 0.372
+    },
+    {
+      "range": "0.4-0.6",
+      "n": 385,
+      "mean_confidence": 0.455,
+      "accuracy": 0.564
+    },
+    {
+      "range": "0.6-0.8",
+      "n": 7,
+      "mean_confidence": 0.627,
+      "accuracy": 0.857
+    }
+  ]
+}
