@@ -149,7 +149,7 @@ def main():
         cards = []
         for _, fixture in fixtures.iterrows():
             pred = state_prediction(completed, fixture)
-            card = {"date": fixture.date.date().isoformat(), "kickoff": fixture.kickoff if pd.notna(fixture.kickoff) else None, "home_team": fixture.home_team, "away_team": fixture.away_team, "prediction_available": bool(pred)}
+            card = {"date": fixture.date.date().isoformat(), "matchweek": int(fixture.matchweek) if pd.notna(fixture.matchweek) else None, "kickoff": fixture.kickoff if pd.notna(fixture.kickoff) else None, "home_team": fixture.home_team, "away_team": fixture.away_team, "prediction_available": bool(pred)}
             if pred: card.update({k: round(v, 4) if isinstance(v, float) else v for k,v in pred.items()})
             cards.append(card)
         predictions["leagues"][league] = cards

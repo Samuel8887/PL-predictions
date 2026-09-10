@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-09-10T21:01+02:00",
+  "generated_at": "2026-09-10T21:21+02:00",
   "source": "openfootball/england",
   "leagues": {
     "championship": [
       {
         "date": "2026-09-09",
+        "matchweek": 6,
         "kickoff": "19:45",
         "home_team": "Derby County",
         "away_team": "West Bromwich Albion",
@@ -19,6 +20,7 @@
       },
       {
         "date": "2026-09-09",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Birmingham City",
@@ -33,6 +35,7 @@
       },
       {
         "date": "2026-09-09",
+        "matchweek": 6,
         "kickoff": "20:00",
         "home_team": "Charlton Athletic",
         "away_team": "Queens Park Rangers",
@@ -47,6 +50,7 @@
       },
       {
         "date": "2026-09-11",
+        "matchweek": 7,
         "kickoff": "20:00",
         "home_team": "West Ham United",
         "away_team": "Wrexham",
@@ -61,6 +65,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": "12:30",
         "home_team": "Derby County",
         "away_team": "Birmingham City",
@@ -75,6 +80,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Cardiff City",
@@ -89,6 +95,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Queens Park Rangers",
@@ -103,6 +110,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": "15:00",
         "home_team": "Southampton",
         "away_team": "Bristol City",
@@ -117,6 +125,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Lincoln City",
@@ -131,6 +140,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Millwall",
@@ -145,6 +155,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Portsmouth",
@@ -159,6 +170,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Stoke City",
@@ -173,6 +185,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Burnley",
@@ -187,6 +200,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Norwich City",
@@ -201,6 +215,7 @@
       },
       {
         "date": "2026-09-13",
+        "matchweek": 7,
         "kickoff": "12:00",
         "home_team": "Sheffield United",
         "away_team": "Wolverhampton Wanderers",
@@ -215,6 +230,7 @@
       },
       {
         "date": "2026-09-15",
+        "matchweek": 6,
         "kickoff": "19:45",
         "home_team": "Middlesbrough",
         "away_team": "Millwall",
@@ -229,6 +245,7 @@
       },
       {
         "date": "2026-09-15",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Lincoln City",
@@ -243,6 +260,7 @@
       },
       {
         "date": "2026-09-18",
+        "matchweek": 8,
         "kickoff": "20:00",
         "home_team": "Bristol City",
         "away_team": "Watford",
@@ -257,6 +275,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": "12:30",
         "home_team": "Stoke City",
         "away_team": "Sheffield United",
@@ -271,6 +290,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "West Ham United",
@@ -285,6 +305,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Charlton Athletic",
@@ -299,6 +320,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": "15:00",
         "home_team": "Wrexham",
         "away_team": "Southampton",
@@ -313,6 +335,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Derby County",
@@ -327,6 +350,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Preston North End",
@@ -341,6 +365,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Blackburn Rovers",
@@ -355,6 +380,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Middlesbrough",
@@ -369,6 +395,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Swansea City",
@@ -383,6 +410,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 8,
         "kickoff": "12:00",
         "home_team": "Wolverhampton Wanderers",
         "away_team": "West Bromwich Albion",
@@ -397,6 +425,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 8,
         "kickoff": "13:30",
         "home_team": "Norwich City",
         "away_team": "Bolton Wanderers",
@@ -411,6 +440,7 @@
       },
       {
         "date": "2026-10-09",
+        "matchweek": 9,
         "kickoff": "20:00",
         "home_team": "West Ham United",
         "away_team": "Queens Park Rangers",
@@ -425,6 +455,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": "12:30",
         "home_team": "West Bromwich Albion",
         "away_team": "Birmingham City",
@@ -439,6 +470,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Norwich City",
@@ -453,6 +485,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Bristol City",
@@ -467,6 +500,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": "15:00",
         "home_team": "Sheffield United",
         "away_team": "Lincoln City",
@@ -481,6 +515,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Burnley",
@@ -495,6 +530,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Wrexham",
@@ -509,6 +545,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Cardiff City",
@@ -523,6 +560,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Stoke City",
@@ -537,6 +575,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Millwall",
@@ -551,6 +590,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Wolverhampton Wanderers",
@@ -565,6 +605,7 @@
       },
       {
         "date": "2026-10-11",
+        "matchweek": 9,
         "kickoff": "12:00",
         "home_team": "Southampton",
         "away_team": "Portsmouth",
@@ -579,6 +620,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": "20:00",
         "home_team": "Stoke City",
         "away_team": "Middlesbrough",
@@ -593,6 +635,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Preston North End",
@@ -607,6 +650,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Blackburn Rovers",
@@ -621,6 +665,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Charlton Athletic",
@@ -635,6 +680,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Watford",
@@ -649,6 +695,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Swansea City",
@@ -663,6 +710,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "West Bromwich Albion",
@@ -677,6 +725,7 @@
       },
       {
         "date": "2026-10-13",
+        "matchweek": 10,
         "kickoff": "19:45",
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Bolton Wanderers",
@@ -691,6 +740,7 @@
       },
       {
         "date": "2026-10-14",
+        "matchweek": 10,
         "kickoff": "19:45",
         "home_team": "Portsmouth",
         "away_team": "Sheffield United",
@@ -705,6 +755,7 @@
       },
       {
         "date": "2026-10-14",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Southampton",
@@ -719,6 +770,7 @@
       },
       {
         "date": "2026-10-14",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Derby County",
@@ -733,6 +785,7 @@
       },
       {
         "date": "2026-10-14",
+        "matchweek": 10,
         "kickoff": "20:00",
         "home_team": "Lincoln City",
         "away_team": "West Ham United",
@@ -747,6 +800,7 @@
       },
       {
         "date": "2026-10-16",
+        "matchweek": 11,
         "kickoff": "20:00",
         "home_team": "Burnley",
         "away_team": "Wolverhampton Wanderers",
@@ -761,6 +815,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Preston North End",
@@ -775,6 +830,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Blackburn Rovers",
@@ -789,6 +845,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "West Ham United",
@@ -803,6 +860,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Stoke City",
@@ -817,6 +875,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Queens Park Rangers",
@@ -831,6 +890,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Sheffield United",
@@ -845,6 +905,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Bolton Wanderers",
@@ -859,6 +920,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": "15:00",
         "home_team": "Norwich City",
         "away_team": "Portsmouth",
@@ -873,6 +935,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Charlton Athletic",
@@ -887,6 +950,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Cardiff City",
@@ -901,6 +965,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 11,
         "kickoff": "12:30",
         "home_team": "Millwall",
         "away_team": "Lincoln City",
@@ -915,6 +980,7 @@
       },
       {
         "date": "2026-10-20",
+        "matchweek": 6,
         "kickoff": "19:45",
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Portsmouth",
@@ -929,6 +995,7 @@
       },
       {
         "date": "2026-10-23",
+        "matchweek": 12,
         "kickoff": "20:00",
         "home_team": "Bolton Wanderers",
         "away_team": "Middlesbrough",
@@ -943,6 +1010,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Watford",
@@ -957,6 +1025,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Wrexham",
@@ -971,6 +1040,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Southampton",
@@ -985,6 +1055,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Burnley",
@@ -999,6 +1070,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "West Bromwich Albion",
@@ -1013,6 +1085,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Swansea City",
@@ -1027,6 +1100,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": "15:00",
         "home_team": "Cardiff City",
         "away_team": "Birmingham City",
@@ -1041,6 +1115,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Millwall",
@@ -1055,6 +1130,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Norwich City",
@@ -1069,6 +1145,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": "12:30",
         "home_team": "Sheffield United",
         "away_team": "Derby County",
@@ -1083,6 +1160,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Bristol City",
@@ -1097,6 +1175,7 @@
       },
       {
         "date": "2026-10-30",
+        "matchweek": 13,
         "kickoff": "20:00",
         "home_team": "Sheffield United",
         "away_team": "Wrexham",
@@ -1111,6 +1190,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Bristol City",
@@ -1125,6 +1205,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Derby County",
@@ -1139,6 +1220,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Portsmouth",
@@ -1153,6 +1235,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Charlton Athletic",
@@ -1167,6 +1250,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Blackburn Rovers",
@@ -1181,6 +1265,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Queens Park Rangers",
@@ -1195,6 +1280,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": "15:00",
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Cardiff City",
@@ -1209,6 +1295,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Birmingham City",
@@ -1223,6 +1310,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Watford",
@@ -1237,6 +1325,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": "12:30",
         "home_team": "Stoke City",
         "away_team": "Preston North End",
@@ -1251,6 +1340,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "West Bromwich Albion",
@@ -1265,6 +1355,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": "19:45",
         "home_team": "Queens Park Rangers",
         "away_team": "Burnley",
@@ -1279,6 +1370,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Norwich City",
@@ -1293,6 +1385,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Stoke City",
@@ -1307,6 +1400,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Lincoln City",
@@ -1321,6 +1415,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Bolton Wanderers",
@@ -1335,6 +1430,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Millwall",
@@ -1349,6 +1445,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Swansea City",
@@ -1363,6 +1460,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Sheffield United",
@@ -1377,6 +1475,7 @@
       },
       {
         "date": "2026-11-03",
+        "matchweek": 14,
         "kickoff": "20:00",
         "home_team": "West Bromwich Albion",
         "away_team": "Southampton",
@@ -1391,6 +1490,7 @@
       },
       {
         "date": "2026-11-04",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Middlesbrough",
@@ -1405,6 +1505,7 @@
       },
       {
         "date": "2026-11-04",
+        "matchweek": 14,
         "kickoff": "20:00",
         "home_team": "Bristol City",
         "away_team": "Wolverhampton Wanderers",
@@ -1419,6 +1520,7 @@
       },
       {
         "date": "2026-11-04",
+        "matchweek": 14,
         "kickoff": "19:45",
         "home_team": "Cardiff City",
         "away_team": "West Ham United",
@@ -1433,6 +1535,7 @@
       },
       {
         "date": "2026-11-06",
+        "matchweek": 15,
         "kickoff": "20:00",
         "home_team": "Derby County",
         "away_team": "Bolton Wanderers",
@@ -1447,6 +1550,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Middlesbrough",
@@ -1461,6 +1565,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": "12:30",
         "home_team": "Wrexham",
         "away_team": "Wolverhampton Wanderers",
@@ -1475,6 +1580,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Stoke City",
@@ -1489,6 +1595,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Norwich City",
@@ -1503,6 +1610,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": "15:00",
         "home_team": "Queens Park Rangers",
         "away_team": "Lincoln City",
@@ -1517,6 +1625,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Burnley",
@@ -1531,6 +1640,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Sheffield United",
@@ -1545,6 +1655,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "West Ham United",
@@ -1559,6 +1670,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Millwall",
@@ -1573,6 +1685,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Southampton",
@@ -1587,6 +1700,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Swansea City",
@@ -1601,6 +1715,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Wrexham",
@@ -1615,6 +1730,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Cardiff City",
@@ -1629,6 +1745,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Charlton Athletic",
@@ -1643,6 +1760,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Preston North End",
@@ -1657,6 +1775,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Birmingham City",
@@ -1671,6 +1790,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Portsmouth",
@@ -1685,6 +1805,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Bristol City",
@@ -1699,6 +1820,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": "15:00",
         "home_team": "Swansea City",
         "away_team": "West Bromwich Albion",
@@ -1713,6 +1835,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Queens Park Rangers",
@@ -1727,6 +1850,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Derby County",
@@ -1741,6 +1865,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 16,
         "kickoff": "12:30",
         "home_team": "Sheffield United",
         "away_team": "Watford",
@@ -1755,6 +1880,7 @@
       },
       {
         "date": "2026-11-22",
+        "matchweek": 16,
         "kickoff": "12:00",
         "home_team": "Burnley",
         "away_team": "Blackburn Rovers",
@@ -1769,6 +1895,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": "19:45",
         "home_team": "Cardiff City",
         "away_team": "Preston North End",
@@ -1783,6 +1910,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Swansea City",
@@ -1797,6 +1925,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "West Ham United",
@@ -1811,6 +1940,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Southampton",
@@ -1825,6 +1955,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Lincoln City",
@@ -1839,6 +1970,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Wrexham",
@@ -1853,6 +1985,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Queens Park Rangers",
@@ -1867,6 +2000,7 @@
       },
       {
         "date": "2026-11-24",
+        "matchweek": 17,
         "kickoff": "20:00",
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Derby County",
@@ -1881,6 +2015,7 @@
       },
       {
         "date": "2026-11-25",
+        "matchweek": 17,
         "kickoff": "20:00",
         "home_team": "Stoke City",
         "away_team": "Millwall",
@@ -1895,6 +2030,7 @@
       },
       {
         "date": "2026-11-25",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Birmingham City",
@@ -1909,6 +2045,7 @@
       },
       {
         "date": "2026-11-25",
+        "matchweek": 17,
         "kickoff": "19:45",
         "home_team": "Watford",
         "away_team": "Blackburn Rovers",
@@ -1923,6 +2060,7 @@
       },
       {
         "date": "2026-11-25",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "West Bromwich Albion",
@@ -1937,6 +2075,7 @@
       },
       {
         "date": "2026-11-27",
+        "matchweek": 18,
         "kickoff": "20:00",
         "home_team": "Southampton",
         "away_team": "Middlesbrough",
@@ -1951,6 +2090,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Stoke City",
@@ -1965,6 +2105,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": "12:30",
         "home_team": "Blackburn Rovers",
         "away_team": "Charlton Athletic",
@@ -1979,6 +2120,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Wolverhampton Wanderers",
@@ -1993,6 +2135,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Norwich City",
@@ -2007,6 +2150,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": "15:00",
         "home_team": "Wrexham",
         "away_team": "Portsmouth",
@@ -2021,6 +2165,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Sheffield United",
@@ -2035,6 +2180,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Burnley",
@@ -2049,6 +2195,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Bolton Wanderers",
@@ -2063,6 +2210,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Watford",
@@ -2077,6 +2225,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Bristol City",
@@ -2091,6 +2240,7 @@
       },
       {
         "date": "2026-11-29",
+        "matchweek": 18,
         "kickoff": "12:00",
         "home_team": "Swansea City",
         "away_team": "Cardiff City",
@@ -2105,6 +2255,7 @@
       },
       {
         "date": "2026-12-04",
+        "matchweek": 19,
         "kickoff": "20:00",
         "home_team": "Sheffield United",
         "away_team": "West Ham United",
@@ -2119,6 +2270,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": "12:30",
         "home_team": "Bristol City",
         "away_team": "Swansea City",
@@ -2133,6 +2285,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Blackburn Rovers",
@@ -2147,6 +2300,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Derby County",
@@ -2161,6 +2315,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": "15:00",
         "home_team": "Cardiff City",
         "away_team": "Lincoln City",
@@ -2175,6 +2330,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Wrexham",
@@ -2189,6 +2345,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Birmingham City",
@@ -2203,6 +2360,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Southampton",
@@ -2217,6 +2375,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Millwall",
@@ -2231,6 +2390,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "West Bromwich Albion",
@@ -2245,6 +2405,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Queens Park Rangers",
@@ -2259,6 +2420,7 @@
       },
       {
         "date": "2026-12-06",
+        "matchweek": 19,
         "kickoff": "12:00",
         "home_team": "Burnley",
         "away_team": "Preston North End",
@@ -2273,6 +2435,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": "20:45",
         "home_team": "West Ham United",
         "away_team": "Middlesbrough",
@@ -2287,6 +2450,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Watford",
@@ -2301,6 +2465,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Wolverhampton Wanderers",
@@ -2315,6 +2480,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Bolton Wanderers",
@@ -2329,6 +2495,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Charlton Athletic",
@@ -2343,6 +2510,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Cardiff City",
@@ -2357,6 +2525,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": "19:45",
         "home_team": "Blackburn Rovers",
         "away_team": "Norwich City",
@@ -2371,6 +2540,7 @@
       },
       {
         "date": "2026-12-08",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Sheffield United",
@@ -2385,6 +2555,7 @@
       },
       {
         "date": "2026-12-09",
+        "matchweek": 20,
         "kickoff": "19:45",
         "home_team": "Preston North End",
         "away_team": "Portsmouth",
@@ -2399,6 +2570,7 @@
       },
       {
         "date": "2026-12-09",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Stoke City",
@@ -2413,6 +2585,7 @@
       },
       {
         "date": "2026-12-09",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Bristol City",
@@ -2427,6 +2600,7 @@
       },
       {
         "date": "2026-12-09",
+        "matchweek": 20,
         "kickoff": "20:00",
         "home_team": "Southampton",
         "away_team": "Burnley",
@@ -2441,6 +2615,7 @@
       },
       {
         "date": "2026-12-11",
+        "matchweek": 21,
         "kickoff": "20:00",
         "home_team": "Bolton Wanderers",
         "away_team": "Wrexham",
@@ -2455,6 +2630,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Birmingham City",
@@ -2469,6 +2645,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Southampton",
@@ -2483,6 +2660,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Millwall",
@@ -2497,6 +2675,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Burnley",
@@ -2511,6 +2690,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Derby County",
@@ -2525,6 +2705,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Bristol City",
@@ -2539,6 +2720,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Norwich City",
@@ -2553,6 +2735,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": "15:00",
         "home_team": "Charlton Athletic",
         "away_team": "Swansea City",
@@ -2567,6 +2750,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "West Bromwich Albion",
@@ -2581,6 +2765,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Watford",
@@ -2595,6 +2780,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 21,
         "kickoff": "12:30",
         "home_team": "Preston North End",
         "away_team": "Middlesbrough",
@@ -2609,6 +2795,7 @@
       },
       {
         "date": "2026-12-18",
+        "matchweek": 22,
         "kickoff": "20:00",
         "home_team": "West Bromwich Albion",
         "away_team": "Sheffield United",
@@ -2623,6 +2810,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Queens Park Rangers",
@@ -2637,6 +2825,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Lincoln City",
@@ -2651,6 +2840,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Stoke City",
@@ -2665,6 +2855,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Wolverhampton Wanderers",
@@ -2679,6 +2870,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": "15:00",
         "home_team": "Middlesbrough",
         "away_team": "Portsmouth",
@@ -2693,6 +2885,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Bolton Wanderers",
@@ -2707,6 +2900,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Preston North End",
@@ -2721,6 +2915,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Blackburn Rovers",
@@ -2735,6 +2930,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Charlton Athletic",
@@ -2749,6 +2945,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": "12:30",
         "home_team": "Bristol City",
         "away_team": "Cardiff City",
@@ -2763,6 +2960,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "West Ham United",
@@ -2777,6 +2975,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Millwall",
@@ -2791,6 +2990,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Southampton",
@@ -2805,6 +3005,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Wrexham",
@@ -2819,6 +3020,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Derby County",
@@ -2833,6 +3035,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Bristol City",
@@ -2847,6 +3050,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "West Bromwich Albion",
@@ -2861,6 +3065,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Norwich City",
@@ -2875,6 +3080,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Birmingham City",
@@ -2889,6 +3095,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": "15:00",
         "home_team": "Portsmouth",
         "away_team": "Watford",
@@ -2903,6 +3110,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Middlesbrough",
@@ -2917,6 +3125,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": "12:30",
         "home_team": "Bolton Wanderers",
         "away_team": "Burnley",
@@ -2931,6 +3140,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Swansea City",
@@ -2945,6 +3155,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": "20:15",
         "home_team": "Southampton",
         "away_team": "West Ham United",
@@ -2959,6 +3170,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Portsmouth",
@@ -2973,6 +3185,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Bolton Wanderers",
@@ -2987,6 +3200,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Cardiff City",
@@ -3001,6 +3215,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Lincoln City",
@@ -3015,6 +3230,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Stoke City",
@@ -3029,6 +3245,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Wolverhampton Wanderers",
@@ -3043,6 +3260,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Queens Park Rangers",
@@ -3057,6 +3275,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Sheffield United",
@@ -3071,6 +3290,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": "19:45",
         "home_team": "West Bromwich Albion",
         "away_team": "Preston North End",
@@ -3085,6 +3305,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": "18:00",
         "home_team": "Wrexham",
         "away_team": "Blackburn Rovers",
@@ -3099,6 +3320,7 @@
       },
       {
         "date": "2026-12-29",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Charlton Athletic",
@@ -3113,6 +3335,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Wolverhampton Wanderers",
@@ -3127,6 +3350,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Bolton Wanderers",
@@ -3141,6 +3365,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Charlton Athletic",
@@ -3155,6 +3380,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Lincoln City",
@@ -3169,6 +3395,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Stoke City",
@@ -3183,6 +3410,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Sheffield United",
@@ -3197,6 +3425,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Blackburn Rovers",
@@ -3211,6 +3440,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Queens Park Rangers",
@@ -3225,6 +3455,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Cardiff City",
@@ -3239,6 +3470,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Preston North End",
@@ -3253,6 +3485,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "West Ham United",
@@ -3267,6 +3500,7 @@
       },
       {
         "date": "2027-01-01",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Portsmouth",
@@ -3281,6 +3515,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Swansea City",
@@ -3295,6 +3530,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Birmingham City",
@@ -3309,6 +3545,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "West Bromwich Albion",
@@ -3323,6 +3560,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Southampton",
@@ -3337,6 +3575,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Norwich City",
@@ -3351,6 +3590,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Bristol City",
@@ -3365,6 +3605,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Middlesbrough",
@@ -3379,6 +3620,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Wrexham",
@@ -3393,6 +3635,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Millwall",
@@ -3407,6 +3650,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Burnley",
@@ -3421,6 +3665,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Watford",
@@ -3435,6 +3680,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Derby County",
@@ -3449,6 +3695,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Swansea City",
@@ -3463,6 +3710,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "West Ham United",
@@ -3477,6 +3725,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Norwich City",
@@ -3491,6 +3740,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Lincoln City",
@@ -3505,6 +3755,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Burnley",
@@ -3519,6 +3770,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Middlesbrough",
@@ -3533,6 +3785,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Bolton Wanderers",
@@ -3547,6 +3800,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Southampton",
@@ -3561,6 +3815,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Wolverhampton Wanderers",
@@ -3575,6 +3830,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Stoke City",
@@ -3589,6 +3845,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Sheffield United",
@@ -3603,6 +3860,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Millwall",
@@ -3617,6 +3875,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Queens Park Rangers",
@@ -3631,6 +3890,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Charlton Athletic",
@@ -3645,6 +3905,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Derby County",
@@ -3659,6 +3920,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Watford",
@@ -3673,6 +3935,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Preston North End",
@@ -3687,6 +3950,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "West Bromwich Albion",
@@ -3701,6 +3965,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Birmingham City",
@@ -3715,6 +3980,7 @@
       },
       {
         "date": "2027-01-26",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Blackburn Rovers",
@@ -3729,6 +3995,7 @@
       },
       {
         "date": "2027-01-27",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Cardiff City",
@@ -3743,6 +4010,7 @@
       },
       {
         "date": "2027-01-27",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Wrexham",
@@ -3757,6 +4025,7 @@
       },
       {
         "date": "2027-01-27",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Bristol City",
@@ -3771,6 +4040,7 @@
       },
       {
         "date": "2027-01-27",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Portsmouth",
@@ -3785,6 +4055,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Bristol City",
@@ -3799,6 +4070,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Charlton Athletic",
@@ -3813,6 +4085,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Watford",
@@ -3827,6 +4100,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Blackburn Rovers",
@@ -3841,6 +4115,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Portsmouth",
@@ -3855,6 +4130,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Derby County",
@@ -3869,6 +4145,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Wrexham",
@@ -3883,6 +4160,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "West Bromwich Albion",
@@ -3897,6 +4175,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Preston North End",
@@ -3911,6 +4190,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Birmingham City",
@@ -3925,6 +4205,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Cardiff City",
@@ -3939,6 +4220,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Queens Park Rangers",
@@ -3953,6 +4235,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Lincoln City",
@@ -3967,6 +4250,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Stoke City",
@@ -3981,6 +4265,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Middlesbrough",
@@ -3995,6 +4280,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Norwich City",
@@ -4009,6 +4295,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Burnley",
@@ -4023,6 +4310,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Wolverhampton Wanderers",
@@ -4037,6 +4325,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Southampton",
@@ -4051,6 +4340,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Bolton Wanderers",
@@ -4065,6 +4355,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "West Ham United",
@@ -4079,6 +4370,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Sheffield United",
@@ -4093,6 +4385,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Swansea City",
@@ -4107,6 +4400,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Millwall",
@@ -4121,6 +4415,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Watford",
@@ -4135,6 +4430,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Blackburn Rovers",
@@ -4149,6 +4445,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Charlton Athletic",
@@ -4163,6 +4460,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Swansea City",
@@ -4177,6 +4475,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "West Ham United",
@@ -4191,6 +4490,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Sheffield United",
@@ -4205,6 +4505,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Bolton Wanderers",
@@ -4219,6 +4520,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Middlesbrough",
@@ -4233,6 +4535,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Derby County",
@@ -4247,6 +4550,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Preston North End",
@@ -4261,6 +4565,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "West Bromwich Albion",
@@ -4275,6 +4580,7 @@
       },
       {
         "date": "2027-02-13",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Southampton",
@@ -4289,6 +4595,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Queens Park Rangers",
@@ -4303,6 +4610,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Wrexham",
@@ -4317,6 +4625,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Birmingham City",
@@ -4331,6 +4640,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Cardiff City",
@@ -4345,6 +4655,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Lincoln City",
@@ -4359,6 +4670,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Portsmouth",
@@ -4373,6 +4685,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Bristol City",
@@ -4387,6 +4700,7 @@
       },
       {
         "date": "2027-02-16",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Burnley",
@@ -4401,6 +4715,7 @@
       },
       {
         "date": "2027-02-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Wolverhampton Wanderers",
@@ -4415,6 +4730,7 @@
       },
       {
         "date": "2027-02-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Millwall",
@@ -4429,6 +4745,7 @@
       },
       {
         "date": "2027-02-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Norwich City",
@@ -4443,6 +4760,7 @@
       },
       {
         "date": "2027-02-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Stoke City",
@@ -4457,6 +4775,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Bristol City",
@@ -4471,6 +4790,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Norwich City",
@@ -4485,6 +4805,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Millwall",
@@ -4499,6 +4820,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Portsmouth",
@@ -4513,6 +4835,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Birmingham City",
@@ -4527,6 +4850,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Wolverhampton Wanderers",
@@ -4541,6 +4865,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Queens Park Rangers",
@@ -4555,6 +4880,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Stoke City",
@@ -4569,6 +4895,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Lincoln City",
@@ -4583,6 +4910,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Cardiff City",
@@ -4597,6 +4925,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Wrexham",
@@ -4611,6 +4940,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Burnley",
@@ -4625,6 +4955,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Blackburn Rovers",
@@ -4639,6 +4970,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Watford",
@@ -4653,6 +4985,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Sheffield United",
@@ -4667,6 +5000,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "West Bromwich Albion",
@@ -4681,6 +5015,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Charlton Athletic",
@@ -4695,6 +5030,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Preston North End",
@@ -4709,6 +5045,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Derby County",
@@ -4723,6 +5060,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Swansea City",
@@ -4737,6 +5075,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Bolton Wanderers",
@@ -4751,6 +5090,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Southampton",
@@ -4765,6 +5105,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "West Ham United",
@@ -4779,6 +5120,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Middlesbrough",
@@ -4793,6 +5135,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Derby County",
@@ -4807,6 +5150,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Birmingham City",
@@ -4821,6 +5165,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "West Ham United",
@@ -4835,6 +5180,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Queens Park Rangers",
@@ -4849,6 +5195,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "West Bromwich Albion",
@@ -4863,6 +5210,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Millwall",
@@ -4877,6 +5225,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Blackburn Rovers",
@@ -4891,6 +5240,7 @@
       },
       {
         "date": "2027-03-02",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Wrexham",
@@ -4905,6 +5255,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Lincoln City",
@@ -4919,6 +5270,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Preston North End",
@@ -4933,6 +5285,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Swansea City",
@@ -4947,6 +5300,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Southampton",
@@ -4961,6 +5315,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Bristol City",
@@ -4975,6 +5330,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Sheffield United",
@@ -4989,6 +5345,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Norwich City",
@@ -5003,6 +5360,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Burnley",
@@ -5017,6 +5375,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Middlesbrough",
@@ -5031,6 +5390,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Portsmouth",
@@ -5045,6 +5405,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Stoke City",
@@ -5059,6 +5420,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Cardiff City",
@@ -5073,6 +5435,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Watford",
@@ -5087,6 +5450,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Wolverhampton Wanderers",
@@ -5101,6 +5465,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Charlton Athletic",
@@ -5115,6 +5480,7 @@
       },
       {
         "date": "2027-03-06",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Bolton Wanderers",
@@ -5129,6 +5495,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Birmingham City",
@@ -5143,6 +5510,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Swansea City",
@@ -5157,6 +5525,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Preston North End",
@@ -5171,6 +5540,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "West Ham United",
@@ -5185,6 +5555,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Blackburn Rovers",
@@ -5199,6 +5570,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Lincoln City",
@@ -5213,6 +5585,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Queens Park Rangers",
@@ -5227,6 +5600,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Southampton",
@@ -5241,6 +5615,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Wrexham",
@@ -5255,6 +5630,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Millwall",
@@ -5269,6 +5645,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Derby County",
@@ -5283,6 +5660,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "West Bromwich Albion",
@@ -5297,6 +5675,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Wolverhampton Wanderers",
@@ -5311,6 +5690,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Middlesbrough",
@@ -5325,6 +5705,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Norwich City",
@@ -5339,6 +5720,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Cardiff City",
@@ -5353,6 +5735,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Stoke City",
@@ -5367,6 +5750,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Bristol City",
@@ -5381,6 +5765,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Burnley",
@@ -5395,6 +5780,7 @@
       },
       {
         "date": "2027-03-16",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Portsmouth",
@@ -5409,6 +5795,7 @@
       },
       {
         "date": "2027-03-17",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Sheffield United",
@@ -5423,6 +5810,7 @@
       },
       {
         "date": "2027-03-17",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Watford",
@@ -5437,6 +5825,7 @@
       },
       {
         "date": "2027-03-17",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Bolton Wanderers",
@@ -5451,6 +5840,7 @@
       },
       {
         "date": "2027-03-17",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Charlton Athletic",
@@ -5465,6 +5855,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Bolton Wanderers",
@@ -5479,6 +5870,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "West Ham United",
@@ -5493,6 +5885,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Preston North End",
@@ -5507,6 +5900,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Lincoln City",
@@ -5521,6 +5915,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Sheffield United",
@@ -5535,6 +5930,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Blackburn Rovers",
@@ -5549,6 +5945,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Cardiff City",
@@ -5563,6 +5960,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Portsmouth",
@@ -5577,6 +5975,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Queens Park Rangers",
@@ -5591,6 +5990,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Stoke City",
@@ -5605,6 +6005,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Wolverhampton Wanderers",
@@ -5619,6 +6020,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 39,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Charlton Athletic",
@@ -5633,6 +6035,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Swansea City",
@@ -5647,6 +6050,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Wrexham",
@@ -5661,6 +6065,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Southampton",
@@ -5675,6 +6080,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Norwich City",
@@ -5689,6 +6095,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Derby County",
@@ -5703,6 +6110,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "West Bromwich Albion",
@@ -5717,6 +6125,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Millwall",
@@ -5731,6 +6140,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Watford",
@@ -5745,6 +6155,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Bristol City",
@@ -5759,6 +6170,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Middlesbrough",
@@ -5773,6 +6185,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Burnley",
@@ -5787,6 +6200,7 @@
       },
       {
         "date": "2027-04-03",
+        "matchweek": 40,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Birmingham City",
@@ -5801,6 +6215,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Bristol City",
@@ -5815,6 +6230,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Middlesbrough",
@@ -5829,6 +6245,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Bolton Wanderers",
@@ -5843,6 +6260,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Charlton Athletic",
@@ -5857,6 +6275,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Cardiff City",
@@ -5871,6 +6290,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Wolverhampton Wanderers",
@@ -5885,6 +6305,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Southampton",
@@ -5899,6 +6320,7 @@
       },
       {
         "date": "2027-04-06",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Wrexham",
@@ -5913,6 +6335,7 @@
       },
       {
         "date": "2027-04-07",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Blackburn Rovers",
@@ -5927,6 +6350,7 @@
       },
       {
         "date": "2027-04-07",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Norwich City",
@@ -5941,6 +6365,7 @@
       },
       {
         "date": "2027-04-07",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Watford",
@@ -5955,6 +6380,7 @@
       },
       {
         "date": "2027-04-07",
+        "matchweek": 41,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Derby County",
@@ -5969,6 +6395,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "West Ham United",
@@ -5983,6 +6410,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Burnley",
@@ -5997,6 +6425,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Stoke City",
@@ -6011,6 +6440,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Lincoln City",
@@ -6025,6 +6455,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Queens Park Rangers",
@@ -6039,6 +6470,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Portsmouth",
@@ -6053,6 +6485,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Millwall",
@@ -6067,6 +6500,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Preston North End",
@@ -6081,6 +6515,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "West Bromwich Albion",
@@ -6095,6 +6530,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Birmingham City",
@@ -6109,6 +6545,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Swansea City",
@@ -6123,6 +6560,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 42,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Sheffield United",
@@ -6137,6 +6575,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Watford",
@@ -6151,6 +6590,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Derby County",
@@ -6165,6 +6605,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Southampton",
@@ -6179,6 +6620,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Norwich City",
@@ -6193,6 +6635,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Blackburn Rovers",
@@ -6207,6 +6650,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Bristol City",
@@ -6221,6 +6665,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Bolton Wanderers",
@@ -6235,6 +6680,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Wolverhampton Wanderers",
@@ -6249,6 +6695,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Wrexham",
@@ -6263,6 +6710,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Charlton Athletic",
@@ -6277,6 +6725,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Cardiff City",
@@ -6291,6 +6740,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 43,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Middlesbrough",
@@ -6305,6 +6755,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Birmingham City",
@@ -6319,6 +6770,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Millwall",
@@ -6333,6 +6785,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "West Bromwich Albion",
@@ -6347,6 +6800,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "West Ham United",
@@ -6361,6 +6815,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Stoke City",
@@ -6375,6 +6830,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "Burnley",
@@ -6389,6 +6845,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Sheffield United",
@@ -6403,6 +6860,7 @@
       },
       {
         "date": "2027-04-20",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Portsmouth",
@@ -6417,6 +6875,7 @@
       },
       {
         "date": "2027-04-21",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Preston North End",
@@ -6431,6 +6890,7 @@
       },
       {
         "date": "2027-04-21",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Lincoln City",
@@ -6445,6 +6905,7 @@
       },
       {
         "date": "2027-04-21",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "Queens Park Rangers",
@@ -6459,6 +6920,7 @@
       },
       {
         "date": "2027-04-21",
+        "matchweek": 44,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Swansea City",
@@ -6473,6 +6935,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Portsmouth",
         "away_team": "Preston North End",
@@ -6487,6 +6950,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Cardiff City",
         "away_team": "West Bromwich Albion",
@@ -6501,6 +6965,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Norwich City",
         "away_team": "Blackburn Rovers",
@@ -6515,6 +6980,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Charlton Athletic",
         "away_team": "Wrexham",
@@ -6529,6 +6995,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Bristol City",
         "away_team": "Derby County",
@@ -6543,6 +7010,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Wolverhampton Wanderers",
         "away_team": "Queens Park Rangers",
@@ -6557,6 +7025,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Bolton Wanderers",
         "away_team": "Swansea City",
@@ -6571,6 +7040,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Burnley",
         "away_team": "Southampton",
@@ -6585,6 +7055,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Stoke City",
         "away_team": "Lincoln City",
@@ -6599,6 +7070,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Middlesbrough",
         "away_team": "West Ham United",
@@ -6613,6 +7085,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Watford",
         "away_team": "Birmingham City",
@@ -6627,6 +7100,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 45,
         "kickoff": null,
         "home_team": "Sheffield United",
         "away_team": "Millwall",
@@ -6641,6 +7115,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Wrexham",
         "away_team": "Bristol City",
@@ -6655,6 +7130,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Preston North End",
         "away_team": "Cardiff City",
@@ -6669,6 +7145,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Lincoln City",
         "away_team": "Charlton Athletic",
@@ -6683,6 +7160,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Blackburn Rovers",
         "away_team": "Watford",
@@ -6697,6 +7175,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Millwall",
         "away_team": "Stoke City",
@@ -6711,6 +7190,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Derby County",
         "away_team": "Wolverhampton Wanderers",
@@ -6725,6 +7205,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Southampton",
         "away_team": "Sheffield United",
@@ -6739,6 +7220,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "West Bromwich Albion",
         "away_team": "Bolton Wanderers",
@@ -6753,6 +7235,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "West Ham United",
         "away_team": "Portsmouth",
@@ -6767,6 +7250,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Queens Park Rangers",
         "away_team": "Norwich City",
@@ -6781,6 +7265,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Birmingham City",
         "away_team": "Burnley",
@@ -6795,6 +7280,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 46,
         "kickoff": null,
         "home_team": "Swansea City",
         "away_team": "Middlesbrough",
@@ -6812,6 +7298,7 @@
     "premier-league": [
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": "15:00",
         "home_team": "Crystal Palace",
         "away_team": "Ipswich Town",
@@ -6826,6 +7313,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Fulham",
@@ -6840,6 +7328,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Nottingham Forest",
@@ -6854,6 +7343,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Brentford",
@@ -6868,6 +7358,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Hull City",
@@ -6882,6 +7373,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": "17:30",
         "home_team": "Tottenham Hotspur",
         "away_team": "Everton",
@@ -6896,6 +7388,7 @@
       },
       {
         "date": "2026-09-12",
+        "matchweek": 4,
         "kickoff": "20:00",
         "home_team": "Sunderland",
         "away_team": "Arsenal",
@@ -6910,6 +7403,7 @@
       },
       {
         "date": "2026-09-13",
+        "matchweek": 4,
         "kickoff": "14:00",
         "home_team": "Coventry City",
         "away_team": "Brighton & Hove Albion",
@@ -6924,6 +7418,7 @@
       },
       {
         "date": "2026-09-13",
+        "matchweek": 4,
         "kickoff": "16:30",
         "home_team": "Manchester United",
         "away_team": "Manchester City",
@@ -6938,6 +7433,7 @@
       },
       {
         "date": "2026-09-14",
+        "matchweek": 4,
         "kickoff": "20:00",
         "home_team": "Leeds United",
         "away_team": "Newcastle United",
@@ -6952,6 +7448,7 @@
       },
       {
         "date": "2026-09-18",
+        "matchweek": 5,
         "kickoff": "20:00",
         "home_team": "Brentford",
         "away_team": "Chelsea",
@@ -6966,6 +7463,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 5,
         "kickoff": "17:30",
         "home_team": "Nottingham Forest",
         "away_team": "Coventry City",
@@ -6980,6 +7478,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 5,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Hull City",
@@ -6994,6 +7493,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 5,
         "kickoff": "12:30",
         "home_team": "Tottenham Hotspur",
         "away_team": "Aston Villa",
@@ -7008,6 +7508,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 5,
         "kickoff": "15:00",
         "home_team": "Everton",
         "away_team": "Ipswich Town",
@@ -7022,6 +7523,7 @@
       },
       {
         "date": "2026-09-19",
+        "matchweek": 5,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Arsenal",
@@ -7036,6 +7538,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 5,
         "kickoff": "14:00",
         "home_team": "Bournemouth",
         "away_team": "Liverpool",
@@ -7050,6 +7553,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 5,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Crystal Palace",
@@ -7064,6 +7568,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 5,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Sunderland",
@@ -7078,6 +7583,7 @@
       },
       {
         "date": "2026-09-20",
+        "matchweek": 5,
         "kickoff": "16:30",
         "home_team": "Fulham",
         "away_team": "Manchester United",
@@ -7092,6 +7598,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Brentford",
@@ -7106,6 +7613,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": "17:30",
         "home_team": "Manchester United",
         "away_team": "Tottenham Hotspur",
@@ -7120,6 +7628,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Fulham",
@@ -7134,6 +7643,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": "15:00",
         "home_team": "Sunderland",
         "away_team": "Brighton & Hove Albion",
@@ -7148,6 +7658,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": "12:30",
         "home_team": "Arsenal",
         "away_team": "Leeds United",
@@ -7162,6 +7673,7 @@
       },
       {
         "date": "2026-10-10",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Bournemouth",
@@ -7176,6 +7688,7 @@
       },
       {
         "date": "2026-10-11",
+        "matchweek": 6,
         "kickoff": "14:00",
         "home_team": "Hull City",
         "away_team": "Everton",
@@ -7190,6 +7703,7 @@
       },
       {
         "date": "2026-10-11",
+        "matchweek": 6,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Nottingham Forest",
@@ -7204,6 +7718,7 @@
       },
       {
         "date": "2026-10-11",
+        "matchweek": 6,
         "kickoff": "16:30",
         "home_team": "Liverpool",
         "away_team": "Manchester City",
@@ -7218,6 +7733,7 @@
       },
       {
         "date": "2026-10-12",
+        "matchweek": 6,
         "kickoff": "20:00",
         "home_team": "Coventry City",
         "away_team": "Newcastle United",
@@ -7232,6 +7748,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Liverpool",
@@ -7246,6 +7763,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 7,
         "kickoff": "17:30",
         "home_team": "Newcastle United",
         "away_team": "Aston Villa",
@@ -7260,6 +7778,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Ipswich Town",
@@ -7274,6 +7793,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 7,
         "kickoff": "15:00",
         "home_team": "Fulham",
         "away_team": "Hull City",
@@ -7288,6 +7808,7 @@
       },
       {
         "date": "2026-10-17",
+        "matchweek": 7,
         "kickoff": "12:30",
         "home_team": "Everton",
         "away_team": "Chelsea",
@@ -7302,6 +7823,7 @@
       },
       {
         "date": "2026-10-18",
+        "matchweek": 7,
         "kickoff": "14:00",
         "home_team": "Bournemouth",
         "away_team": "Sunderland",
@@ -7316,6 +7838,7 @@
       },
       {
         "date": "2026-10-18",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Manchester United",
@@ -7330,6 +7853,7 @@
       },
       {
         "date": "2026-10-18",
+        "matchweek": 7,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Crystal Palace",
@@ -7344,6 +7868,7 @@
       },
       {
         "date": "2026-10-18",
+        "matchweek": 7,
         "kickoff": "16:30",
         "home_team": "Nottingham Forest",
         "away_team": "Arsenal",
@@ -7358,6 +7883,7 @@
       },
       {
         "date": "2026-10-19",
+        "matchweek": 7,
         "kickoff": "20:00",
         "home_team": "Tottenham Hotspur",
         "away_team": "Coventry City",
@@ -7372,6 +7898,7 @@
       },
       {
         "date": "2026-10-23",
+        "matchweek": 8,
         "kickoff": "20:00",
         "home_team": "Ipswich Town",
         "away_team": "Nottingham Forest",
@@ -7386,6 +7913,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 8,
         "kickoff": "17:30",
         "home_team": "Chelsea",
         "away_team": "Tottenham Hotspur",
@@ -7400,6 +7928,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Fulham",
@@ -7414,6 +7943,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 8,
         "kickoff": "12:30",
         "home_team": "Aston Villa",
         "away_team": "Manchester City",
@@ -7428,6 +7958,7 @@
       },
       {
         "date": "2026-10-24",
+        "matchweek": 8,
         "kickoff": "15:00",
         "home_team": "Arsenal",
         "away_team": "Everton",
@@ -7442,6 +7973,7 @@
       },
       {
         "date": "2026-10-25",
+        "matchweek": 8,
         "kickoff": "14:00",
         "home_team": "Liverpool",
         "away_team": "Brighton & Hove Albion",
@@ -7456,6 +7988,7 @@
       },
       {
         "date": "2026-10-25",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Newcastle United",
@@ -7470,6 +8003,7 @@
       },
       {
         "date": "2026-10-25",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Bournemouth",
@@ -7484,6 +8018,7 @@
       },
       {
         "date": "2026-10-25",
+        "matchweek": 8,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Brentford",
@@ -7498,6 +8033,7 @@
       },
       {
         "date": "2026-10-25",
+        "matchweek": 8,
         "kickoff": "16:30",
         "home_team": "Sunderland",
         "away_team": "Leeds United",
@@ -7512,6 +8048,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Ipswich Town",
@@ -7526,6 +8063,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": "20:00",
         "home_team": "Aston Villa",
         "away_team": "Fulham",
@@ -7540,6 +8078,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": "17:30",
         "home_team": "Tottenham Hotspur",
         "away_team": "Crystal Palace",
@@ -7554,6 +8093,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Nottingham Forest",
@@ -7568,6 +8108,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Leeds United",
@@ -7582,6 +8123,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": "15:00",
         "home_team": "Manchester City",
         "away_team": "Brighton & Hove Albion",
@@ -7596,6 +8138,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": "12:30",
         "home_team": "Chelsea",
         "away_team": "Manchester United",
@@ -7610,6 +8153,7 @@
       },
       {
         "date": "2026-10-31",
+        "matchweek": 9,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Sunderland",
@@ -7624,6 +8168,7 @@
       },
       {
         "date": "2026-11-01",
+        "matchweek": 9,
         "kickoff": "16:30",
         "home_team": "Liverpool",
         "away_team": "Arsenal",
@@ -7638,6 +8183,7 @@
       },
       {
         "date": "2026-11-02",
+        "matchweek": 9,
         "kickoff": "20:00",
         "home_team": "Newcastle United",
         "away_team": "Everton",
@@ -7652,6 +8198,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Bournemouth",
@@ -7666,6 +8213,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Newcastle United",
@@ -7680,6 +8228,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Aston Villa",
@@ -7694,6 +8243,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Brentford",
@@ -7708,6 +8258,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Chelsea",
@@ -7722,6 +8273,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Tottenham Hotspur",
@@ -7736,6 +8288,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Coventry City",
@@ -7750,6 +8303,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Manchester City",
@@ -7764,6 +8318,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": "15:00",
         "home_team": "Arsenal",
         "away_team": "Hull City",
@@ -7778,6 +8333,7 @@
       },
       {
         "date": "2026-11-07",
+        "matchweek": 10,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Liverpool",
@@ -7792,6 +8348,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Arsenal",
@@ -7806,6 +8363,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": "15:00",
         "home_team": "Chelsea",
         "away_team": "Leeds United",
@@ -7820,6 +8378,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Fulham",
@@ -7834,6 +8393,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Sunderland",
@@ -7848,6 +8408,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Manchester United",
@@ -7862,6 +8423,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Brighton & Hove Albion",
@@ -7876,6 +8438,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Nottingham Forest",
@@ -7890,6 +8453,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Ipswich Town",
@@ -7904,6 +8468,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Everton",
@@ -7918,6 +8483,7 @@
       },
       {
         "date": "2026-11-21",
+        "matchweek": 11,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Crystal Palace",
@@ -7932,6 +8498,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Tottenham Hotspur",
@@ -7946,6 +8513,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Chelsea",
@@ -7960,6 +8528,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Hull City",
@@ -7974,6 +8543,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Bournemouth",
@@ -7988,6 +8558,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Newcastle United",
@@ -8002,6 +8573,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Brentford",
@@ -8016,6 +8588,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Manchester City",
@@ -8030,6 +8603,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Liverpool",
@@ -8044,6 +8618,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Aston Villa",
@@ -8058,6 +8633,7 @@
       },
       {
         "date": "2026-11-28",
+        "matchweek": 12,
         "kickoff": "15:00",
         "home_team": "Leeds United",
         "away_team": "Coventry City",
@@ -8072,6 +8648,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Brighton & Hove Albion",
@@ -8086,6 +8663,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Manchester United",
@@ -8100,6 +8678,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Leeds United",
@@ -8114,6 +8693,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Ipswich Town",
@@ -8128,6 +8708,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Arsenal",
@@ -8142,6 +8723,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Everton",
@@ -8156,6 +8738,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Crystal Palace",
@@ -8170,6 +8753,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Nottingham Forest",
@@ -8184,6 +8768,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Sunderland",
@@ -8198,6 +8783,7 @@
       },
       {
         "date": "2026-12-02",
+        "matchweek": 13,
         "kickoff": "20:00",
         "home_team": "Tottenham Hotspur",
         "away_team": "Fulham",
@@ -8212,6 +8798,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Fulham",
@@ -8226,6 +8813,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Brighton & Hove Albion",
@@ -8240,6 +8828,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Crystal Palace",
@@ -8254,6 +8843,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Hull City",
@@ -8268,6 +8858,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Manchester City",
@@ -8282,6 +8873,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Liverpool",
@@ -8296,6 +8888,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Sunderland",
@@ -8310,6 +8903,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Ipswich Town",
@@ -8324,6 +8918,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Coventry City",
@@ -8338,6 +8933,7 @@
       },
       {
         "date": "2026-12-05",
+        "matchweek": 14,
         "kickoff": "15:00",
         "home_team": "Tottenham Hotspur",
         "away_team": "Arsenal",
@@ -8352,6 +8948,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Brentford",
@@ -8366,6 +8963,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Leeds United",
@@ -8380,6 +8978,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Chelsea",
@@ -8394,6 +8993,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Bournemouth",
@@ -8408,6 +9008,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Aston Villa",
@@ -8422,6 +9023,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Newcastle United",
@@ -8436,6 +9038,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Everton",
@@ -8450,6 +9053,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Tottenham Hotspur",
@@ -8464,6 +9068,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Manchester United",
@@ -8478,6 +9083,7 @@
       },
       {
         "date": "2026-12-12",
+        "matchweek": 15,
         "kickoff": "15:00",
         "home_team": "Sunderland",
         "away_team": "Nottingham Forest",
@@ -8492,6 +9098,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Tottenham Hotspur",
@@ -8506,6 +9113,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Manchester United",
@@ -8520,6 +9128,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Coventry City",
@@ -8534,6 +9143,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Crystal Palace",
@@ -8548,6 +9158,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Aston Villa",
@@ -8562,6 +9173,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Newcastle United",
@@ -8576,6 +9188,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Everton",
@@ -8590,6 +9203,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Ipswich Town",
@@ -8604,6 +9218,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": "15:00",
         "home_team": "Leeds United",
         "away_team": "Fulham",
@@ -8618,6 +9233,7 @@
       },
       {
         "date": "2026-12-19",
+        "matchweek": 16,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Hull City",
@@ -8632,6 +9248,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Brentford",
@@ -8646,6 +9263,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Liverpool",
@@ -8660,6 +9278,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Bournemouth",
@@ -8674,6 +9293,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Brighton & Hove Albion",
@@ -8688,6 +9308,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Manchester City",
@@ -8702,6 +9323,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Chelsea",
@@ -8716,6 +9338,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Sunderland",
@@ -8730,6 +9353,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Arsenal",
@@ -8744,6 +9368,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Nottingham Forest",
@@ -8758,6 +9383,7 @@
       },
       {
         "date": "2026-12-26",
+        "matchweek": 17,
         "kickoff": "15:00",
         "home_team": "Aston Villa",
         "away_team": "Leeds United",
@@ -8772,6 +9398,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Manchester City",
@@ -8786,6 +9413,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Brighton & Hove Albion",
@@ -8800,6 +9428,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Chelsea",
@@ -8814,6 +9443,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Sunderland",
@@ -8828,6 +9458,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Bournemouth",
@@ -8842,6 +9473,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Nottingham Forest",
@@ -8856,6 +9488,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Liverpool",
@@ -8870,6 +9503,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Brentford",
@@ -8884,6 +9518,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": "20:00",
         "home_team": "Fulham",
         "away_team": "Arsenal",
@@ -8898,6 +9533,7 @@
       },
       {
         "date": "2026-12-30",
+        "matchweek": 18,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Leeds United",
@@ -8912,6 +9548,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Manchester United",
@@ -8926,6 +9563,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Fulham",
@@ -8940,6 +9578,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Newcastle United",
@@ -8954,6 +9593,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Coventry City",
@@ -8968,6 +9608,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Tottenham Hotspur",
@@ -8982,6 +9623,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Ipswich Town",
@@ -8996,6 +9638,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Everton",
@@ -9010,6 +9653,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Crystal Palace",
@@ -9024,6 +9668,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": "15:00",
         "home_team": "Bournemouth",
         "away_team": "Aston Villa",
@@ -9038,6 +9683,7 @@
       },
       {
         "date": "2027-01-02",
+        "matchweek": 19,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Hull City",
@@ -9052,6 +9698,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Coventry City",
@@ -9066,6 +9713,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Chelsea",
@@ -9080,6 +9728,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Liverpool",
@@ -9094,6 +9743,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Aston Villa",
@@ -9108,6 +9758,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Tottenham Hotspur",
@@ -9122,6 +9773,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Hull City",
@@ -9136,6 +9788,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Newcastle United",
@@ -9150,6 +9803,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Manchester City",
@@ -9164,6 +9818,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": "20:00",
         "home_team": "Arsenal",
         "away_team": "Brentford",
@@ -9178,6 +9833,7 @@
       },
       {
         "date": "2027-01-06",
+        "matchweek": 20,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Bournemouth",
@@ -9192,6 +9848,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Everton",
@@ -9206,6 +9863,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Fulham",
@@ -9220,6 +9878,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Arsenal",
@@ -9234,6 +9893,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Crystal Palace",
@@ -9248,6 +9908,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Leeds United",
@@ -9262,6 +9923,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Manchester United",
@@ -9276,6 +9938,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Brighton & Hove Albion",
@@ -9290,6 +9953,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Sunderland",
@@ -9304,6 +9968,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Nottingham Forest",
@@ -9318,6 +9983,7 @@
       },
       {
         "date": "2027-01-16",
+        "matchweek": 21,
         "kickoff": "15:00",
         "home_team": "Bournemouth",
         "away_team": "Ipswich Town",
@@ -9332,6 +9998,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Tottenham Hotspur",
@@ -9346,6 +10013,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Manchester City",
@@ -9360,6 +10028,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Liverpool",
@@ -9374,6 +10043,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Aston Villa",
@@ -9388,6 +10058,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Chelsea",
@@ -9402,6 +10073,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Bournemouth",
@@ -9416,6 +10088,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Coventry City",
@@ -9430,6 +10103,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Brentford",
@@ -9444,6 +10118,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": "15:00",
         "home_team": "Ipswich Town",
         "away_team": "Hull City",
@@ -9458,6 +10133,7 @@
       },
       {
         "date": "2027-01-23",
+        "matchweek": 22,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Newcastle United",
@@ -9472,6 +10148,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Nottingham Forest",
@@ -9486,6 +10163,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Ipswich Town",
@@ -9500,6 +10178,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Arsenal",
@@ -9514,6 +10193,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Everton",
@@ -9528,6 +10208,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Fulham",
@@ -9542,6 +10223,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": "15:00",
         "home_team": "Tottenham Hotspur",
         "away_team": "Sunderland",
@@ -9556,6 +10238,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Crystal Palace",
@@ -9570,6 +10253,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Brighton & Hove Albion",
@@ -9584,6 +10268,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Manchester United",
@@ -9598,6 +10283,7 @@
       },
       {
         "date": "2027-01-30",
+        "matchweek": 23,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Leeds United",
@@ -9612,6 +10298,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Manchester City",
@@ -9626,6 +10313,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Brentford",
@@ -9640,6 +10328,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Chelsea",
@@ -9654,6 +10343,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Bournemouth",
@@ -9668,6 +10358,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Newcastle United",
@@ -9682,6 +10373,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": "15:00",
         "home_team": "Arsenal",
         "away_team": "Liverpool",
@@ -9696,6 +10388,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Coventry City",
@@ -9710,6 +10403,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Aston Villa",
@@ -9724,6 +10418,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Hull City",
@@ -9738,6 +10433,7 @@
       },
       {
         "date": "2027-02-06",
+        "matchweek": 24,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Tottenham Hotspur",
@@ -9752,6 +10448,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Arsenal",
@@ -9766,6 +10463,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Brighton & Hove Albion",
@@ -9780,6 +10478,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Manchester City",
@@ -9794,6 +10493,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Nottingham Forest",
@@ -9808,6 +10508,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Chelsea",
@@ -9822,6 +10523,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Bournemouth",
@@ -9836,6 +10538,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Sunderland",
@@ -9850,6 +10553,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Liverpool",
@@ -9864,6 +10568,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": "20:00",
         "home_team": "Everton",
         "away_team": "Leeds United",
@@ -9878,6 +10583,7 @@
       },
       {
         "date": "2027-02-10",
+        "matchweek": 25,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Brentford",
@@ -9892,6 +10598,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Manchester United",
@@ -9906,6 +10613,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Aston Villa",
@@ -9920,6 +10628,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Everton",
@@ -9934,6 +10643,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Tottenham Hotspur",
@@ -9948,6 +10658,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Fulham",
@@ -9962,6 +10673,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": "15:00",
         "home_team": "Manchester City",
         "away_team": "Newcastle United",
@@ -9976,6 +10688,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Ipswich Town",
@@ -9990,6 +10703,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Crystal Palace",
@@ -10004,6 +10718,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Hull City",
@@ -10018,6 +10733,7 @@
       },
       {
         "date": "2027-02-20",
+        "matchweek": 26,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Coventry City",
@@ -10032,6 +10748,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": "15:00",
         "home_team": "Crystal Palace",
         "away_team": "Sunderland",
@@ -10046,6 +10763,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Arsenal",
@@ -10060,6 +10778,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Brighton & Hove Albion",
@@ -10074,6 +10793,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Bournemouth",
@@ -10088,6 +10808,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Leeds United",
@@ -10102,6 +10823,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Chelsea",
@@ -10116,6 +10838,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Liverpool",
@@ -10130,6 +10853,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Brentford",
@@ -10144,6 +10868,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Manchester City",
@@ -10158,6 +10883,7 @@
       },
       {
         "date": "2027-02-27",
+        "matchweek": 27,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Nottingham Forest",
@@ -10172,6 +10898,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Coventry City",
@@ -10186,6 +10913,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Aston Villa",
@@ -10200,6 +10928,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Ipswich Town",
@@ -10214,6 +10943,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Fulham",
@@ -10228,6 +10958,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Manchester United",
@@ -10242,6 +10973,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Crystal Palace",
@@ -10256,6 +10988,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Everton",
@@ -10270,6 +11003,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Tottenham Hotspur",
@@ -10284,6 +11018,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": "20:00",
         "home_team": "Nottingham Forest",
         "away_team": "Newcastle United",
@@ -10298,6 +11033,7 @@
       },
       {
         "date": "2027-03-03",
+        "matchweek": 28,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Hull City",
@@ -10312,6 +11048,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Brentford",
@@ -10326,6 +11063,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Everton",
@@ -10340,6 +11078,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Hull City",
@@ -10354,6 +11093,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Arsenal",
@@ -10368,6 +11108,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Newcastle United",
@@ -10382,6 +11123,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Manchester City",
@@ -10396,6 +11138,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Fulham",
@@ -10410,6 +11153,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Nottingham Forest",
@@ -10424,6 +11168,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": "15:00",
         "home_team": "Leeds United",
         "away_team": "Brighton & Hove Albion",
@@ -10438,6 +11183,7 @@
       },
       {
         "date": "2027-03-13",
+        "matchweek": 29,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Ipswich Town",
@@ -10452,6 +11198,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Chelsea",
@@ -10466,6 +11213,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Leeds United",
@@ -10480,6 +11228,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Tottenham Hotspur",
@@ -10494,6 +11243,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Aston Villa",
@@ -10508,6 +11258,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Liverpool",
@@ -10522,6 +11273,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Manchester United",
@@ -10536,6 +11288,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Crystal Palace",
@@ -10550,6 +11303,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Sunderland",
@@ -10564,6 +11318,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Coventry City",
@@ -10578,6 +11333,7 @@
       },
       {
         "date": "2027-03-20",
+        "matchweek": 30,
         "kickoff": "15:00",
         "home_team": "Brentford",
         "away_team": "Bournemouth",
@@ -10592,6 +11348,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Brighton & Hove Albion",
@@ -10606,6 +11363,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Brentford",
@@ -10620,6 +11378,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Everton",
@@ -10634,6 +11393,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Manchester City",
@@ -10648,6 +11408,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Arsenal",
@@ -10662,6 +11423,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Fulham",
@@ -10676,6 +11438,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Hull City",
@@ -10690,6 +11453,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Nottingham Forest",
@@ -10704,6 +11468,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": "15:00",
         "home_team": "Sunderland",
         "away_team": "Ipswich Town",
@@ -10718,6 +11483,7 @@
       },
       {
         "date": "2027-04-10",
+        "matchweek": 31,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Newcastle United",
@@ -10732,6 +11498,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Manchester United",
@@ -10746,6 +11513,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Bournemouth",
@@ -10760,6 +11528,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Tottenham Hotspur",
@@ -10774,6 +11543,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Crystal Palace",
@@ -10788,6 +11558,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Aston Villa",
@@ -10802,6 +11573,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Coventry City",
@@ -10816,6 +11588,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Liverpool",
@@ -10830,6 +11603,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Leeds United",
@@ -10844,6 +11618,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Sunderland",
@@ -10858,6 +11633,7 @@
       },
       {
         "date": "2027-04-17",
+        "matchweek": 32,
         "kickoff": "15:00",
         "home_team": "Brighton & Hove Albion",
         "away_team": "Chelsea",
@@ -10872,6 +11648,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Liverpool",
@@ -10886,6 +11663,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Fulham",
@@ -10900,6 +11678,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Coventry City",
@@ -10914,6 +11693,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Ipswich Town",
@@ -10928,6 +11708,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Sunderland",
@@ -10942,6 +11723,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Brighton & Hove Albion",
@@ -10956,6 +11738,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Crystal Palace",
@@ -10970,6 +11753,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Hull City",
@@ -10984,6 +11768,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Arsenal",
@@ -10998,6 +11783,7 @@
       },
       {
         "date": "2027-04-24",
+        "matchweek": 33,
         "kickoff": "15:00",
         "home_team": "Chelsea",
         "away_team": "Manchester City",
@@ -11012,6 +11798,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Aston Villa",
@@ -11026,6 +11813,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Leeds United",
@@ -11040,6 +11828,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Chelsea",
@@ -11054,6 +11843,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Everton",
@@ -11068,6 +11858,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Tottenham Hotspur",
@@ -11082,6 +11873,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Bournemouth",
@@ -11096,6 +11888,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Manchester United",
@@ -11110,6 +11903,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Nottingham Forest",
@@ -11124,6 +11918,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": "15:00",
         "home_team": "Sunderland",
         "away_team": "Newcastle United",
@@ -11138,6 +11933,7 @@
       },
       {
         "date": "2027-05-01",
+        "matchweek": 34,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Brentford",
@@ -11152,6 +11948,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Manchester United",
@@ -11166,6 +11963,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Hull City",
@@ -11180,6 +11978,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Chelsea",
@@ -11194,6 +11993,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Sunderland",
@@ -11208,6 +12008,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Coventry City",
@@ -11222,6 +12023,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Brentford",
         "away_team": "Aston Villa",
@@ -11236,6 +12038,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Crystal Palace",
@@ -11250,6 +12053,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Ipswich Town",
@@ -11264,6 +12068,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Arsenal",
@@ -11278,6 +12083,7 @@
       },
       {
         "date": "2027-05-08",
+        "matchweek": 35,
         "kickoff": "15:00",
         "home_team": "Manchester City",
         "away_team": "Liverpool",
@@ -11292,6 +12098,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Ipswich Town",
         "away_team": "Manchester City",
@@ -11306,6 +12113,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Nottingham Forest",
@@ -11320,6 +12128,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Bournemouth",
@@ -11334,6 +12143,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Tottenham Hotspur",
@@ -11348,6 +12158,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Brentford",
@@ -11362,6 +12173,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Newcastle United",
@@ -11376,6 +12188,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Brighton & Hove Albion",
@@ -11390,6 +12203,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Leeds United",
@@ -11404,6 +12218,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": "15:00",
         "home_team": "Hull City",
         "away_team": "Fulham",
@@ -11418,6 +12233,7 @@
       },
       {
         "date": "2027-05-15",
+        "matchweek": 36,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Everton",
@@ -11432,6 +12248,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Manchester City",
         "away_team": "Aston Villa",
@@ -11446,6 +12263,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Everton",
         "away_team": "Arsenal",
@@ -11460,6 +12278,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Bournemouth",
         "away_team": "Chelsea",
@@ -11474,6 +12293,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Nottingham Forest",
         "away_team": "Ipswich Town",
@@ -11488,6 +12308,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Fulham",
         "away_team": "Coventry City",
@@ -11502,6 +12323,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Leeds United",
         "away_team": "Sunderland",
@@ -11516,6 +12338,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Tottenham Hotspur",
         "away_team": "Manchester United",
@@ -11530,6 +12353,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Newcastle United",
         "away_team": "Crystal Palace",
@@ -11544,6 +12368,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": "15:00",
         "home_team": "Brentford",
         "away_team": "Hull City",
@@ -11558,6 +12383,7 @@
       },
       {
         "date": "2027-05-23",
+        "matchweek": 37,
         "kickoff": null,
         "home_team": "Brighton & Hove Albion",
         "away_team": "Liverpool",
@@ -11572,6 +12398,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Chelsea",
         "away_team": "Brentford",
@@ -11586,6 +12413,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": "16:00",
         "home_team": "Ipswich Town",
         "away_team": "Everton",
@@ -11600,6 +12428,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Arsenal",
         "away_team": "Brighton & Hove Albion",
@@ -11614,6 +12443,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Liverpool",
         "away_team": "Bournemouth",
@@ -11628,6 +12458,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Coventry City",
         "away_team": "Nottingham Forest",
@@ -11642,6 +12473,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Aston Villa",
         "away_team": "Tottenham Hotspur",
@@ -11656,6 +12488,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Hull City",
         "away_team": "Newcastle United",
@@ -11670,6 +12503,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Manchester United",
         "away_team": "Fulham",
@@ -11684,6 +12518,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Sunderland",
         "away_team": "Manchester City",
@@ -11698,6 +12533,7 @@
       },
       {
         "date": "2027-05-30",
+        "matchweek": 38,
         "kickoff": null,
         "home_team": "Crystal Palace",
         "away_team": "Leeds United",
