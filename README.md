@@ -20,7 +20,11 @@ Only scored matches dated on or before the build date are marked `completed`; la
 
 `scripts/train_predict.py` uses a transparent, league-aware Poisson baseline. For each fixture it uses only matches before that fixture's date (same-day matches are excluded), exponentially downweights older matches with a two-year half-life, and shrinks sparse team rates towards the league average. A team's home attack is blended with its opponent's away defence to get expected home goals; the mirror calculation produces expected away goals. Poisson score probabilities then yield home-win, draw, and away-win estimates.
 
+The win/draw/loss distribution receives one additional calibration step. An exponent is selected on an earlier chronological validation slice and evaluated only on the final held-out slice; it corrects persistent under-confidence without changing expected goals. The current held-out log loss is reported in `site/data/evaluation.json`, alongside the uncalibrated historical-outcome baseline.
+
 For Premier League player estimates, `scripts/import_player_data.py` downloads historical gameweek records from the [vaastav/Fantasy-Premier-League archive](https://github.com/vaastav/Fantasy-Premier-League) (2016-17 onward) and the current public Fantasy Premier League feed. FBref currently blocks automated access from this build environment, so the project does not circumvent that protection or claim that its data was downloaded from FBref. The player forecast uses recent player minutes, goals, assists, xG/xA where present, and a recency-weighted historical prior to allocate the already-modelled team goal expectation across likely starters. It is a performance estimate, not a confirmed-lineup, injury, or betting prediction.
+
+Clicking a Premier League fixture opens two projected 4-3-3 squads. Each table includes availability-based start chance, minutes, goals, assists, xG, xA, and score/assist chance. These are modelled lineups, not official starting XIs.
 
 The report in `site/data/evaluation.json` uses the final chronological 20% of completed fixtures. It includes accuracy, log loss, Brier score, confidence-bin calibration, and a historical-outcome baseline. This is a baseline for learning, not a claim of predictive superiority.
 
