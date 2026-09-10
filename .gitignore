@@ -1,5 +1,7 @@
 .cache/
 source-england/
 data/matches.csv
+data/player_history.csv
+data/current_players.csv
 __pycache__/
 .venv/

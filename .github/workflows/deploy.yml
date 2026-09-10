@@ -21,6 +21,7 @@ jobs:
         with: {python-version: '3.12'}
       - run: pip install -r requirements.txt
       - run: python scripts/import_data.py
+      - run: python scripts/import_player_data.py
       - run: python scripts/train_predict.py
       - uses: actions/upload-pages-artifact@v3
         with: {path: site}
