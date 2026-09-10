@@ -24,7 +24,7 @@ The win/draw/loss distribution receives one additional calibration step. An expo
 
 For Premier League player estimates, `scripts/import_player_data.py` downloads historical gameweek records from the [vaastav/Fantasy-Premier-League archive](https://github.com/vaastav/Fantasy-Premier-League) (2016-17 onward) and the current public Fantasy Premier League feed. FBref currently blocks automated access from this build environment, so the project does not circumvent that protection or claim that its data was downloaded from FBref. The player forecast uses recent player minutes, goals, assists, xG/xA where present, and a recency-weighted historical prior to allocate the already-modelled team goal expectation across likely starters. It is a performance estimate, not a confirmed-lineup, injury, or betting prediction.
 
-Clicking a Premier League fixture opens two projected 4-3-3 squads. Each table includes availability-based start chance, minutes, goals, assists, xG, xA, and score/assist chance. These are modelled lineups, not official starting XIs.
+Clicking a Premier League fixture opens two projected squads. The XI is the 11 players with the highest estimated start chance and the next nine players form the projected bench. Each table includes availability-based start chance, minutes, goals, assists, xG, xA, and score/assist chance. These are modelled lineups, not official starting XIs.
 
 The report in `site/data/evaluation.json` uses the final chronological 20% of completed fixtures. It includes accuracy, log loss, Brier score, confidence-bin calibration, and a historical-outcome baseline. This is a baseline for learning, not a claim of predictive superiority.
 

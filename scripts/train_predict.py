@@ -62,25 +62,21 @@ def player_priors(history: pd.DataFrame) -> pd.DataFrame:
         prior_minutes=("minutes", "sum"), prior_xg=("xg", "sum"), prior_xa=("xa", "sum"),
         prior_goals=("goals", "sum"), prior_assists=("assists", "sum"))
 
-def projected_lineup(players: pd.DataFrame) -> pd.DataFrame:
-    """Choose a transparent 4-3-3 from availability and observed starts."""
-    selected, remaining = [], players.sort_values(["start_probability", "minutes"], ascending=False)
-    for position, count in (("GKP", 1), ("DEF", 4), ("MID", 3), ("FWD", 3)):
-        choices = remaining[remaining.position.eq(position)].head(count)
-        selected.extend(choices.index)
-        remaining = remaining.drop(choices.index)
-    if len(selected) < 11:
-        selected.extend(remaining.head(11 - len(selected)).index)
-    lineup = players.loc[selected].copy()
-    order = {"GKP": 0, "DEF": 1, "MID": 2, "FWD": 3}
-    return lineup.sort_values("position", key=lambda column: column.map(order))
+def projected_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Return the 11 most likely starters and the next nine likely substitutes."""
+    ranked = players.sort_values(["start_probability", "minutes"], ascending=False)
+    return ranked.head(11).copy(), ranked.iloc[11:20].copy()
 
 def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.Series, home_goals: float, away_goals: float):
     """Allocate team xG to likely starters; it never changes the team forecast itself."""
     if current.empty: return None
     side_rows = []
     for team, expected_goals in ((fixture.home_team, home_goals), (fixture.away_team, away_goals)):
-        players = current[current.model_team.eq(team) & current.minutes.gt(0)].copy()
+        pool = current[current.model_team.eq(team)].copy()
+        # Include unused but available squad members so the projected bench is
+        # a real nine-player bench rather than a list limited to past minutes.
+        players = pool[pool.status.eq("a")].copy()
+        if len(players) < 20: players = pool
         if players.empty: continue
         players = players.merge(priors, how="left", on="player_key")
         prior_columns = ["prior_minutes", "prior_xg", "prior_xa", "prior_goals", "prior_assists"]
@@ -92,7 +88,7 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         players["start_probability"] = (0.10 + 0.90 * (0.65 * start_fraction + 0.35 * minutes_fraction)).clip(.05, .98)
         players.loc[players.status.ne("a"), "start_probability"] *= .35
         players["start_probability"] *= (players.chance_of_playing / 100).clip(0, 1)
-        lineup = projected_lineup(players)
+        lineup, bench = projected_squad(players)
         attackers = players[players.position.ne("GKP")].copy()
         # A 240-minute historical prior prevents three early-season matches from
         # completely dominating, while keeping current xG/xA the strongest signal.
@@ -112,13 +108,16 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         columns = ["player", "position", "minutes", "goals", "assists", "xg", "xa", "start_probability", "score_probability", "assist_probability", "performance_score"]
         stats = attackers[columns].round({"xg": 2, "xa": 2, "start_probability": 4, "score_probability": 4, "assist_probability": 4, "performance_score": 4})
         lineup = lineup.merge(stats, how="left", on=["player", "position", "minutes", "goals", "assists", "xg", "xa", "start_probability"])
+        bench = bench.merge(stats, how="left", on=["player", "position", "minutes", "goals", "assists", "xg", "xa", "start_probability"])
         lineup[["score_probability", "assist_probability", "performance_score"]] = lineup[["score_probability", "assist_probability", "performance_score"]].fillna(0)
+        bench[["score_probability", "assist_probability", "performance_score"]] = bench[["score_probability", "assist_probability", "performance_score"]].fillna(0)
         side_rows.append({
             "team": team,
             "top_performers": stats.sort_values(["performance_score", "score_probability"], ascending=False).head(3).to_dict(orient="records"),
             "top_scorer": stats.sort_values("score_probability", ascending=False).iloc[0].to_dict(),
             "top_assister": stats.sort_values("assist_probability", ascending=False).iloc[0].to_dict(),
             "projected_lineup": lineup[columns].round({"xg": 2, "xa": 2, "start_probability": 4, "score_probability": 4, "assist_probability": 4}).to_dict(orient="records"),
+            "projected_bench": bench[columns].round({"xg": 2, "xa": 2, "start_probability": 4, "score_probability": 4, "assist_probability": 4}).to_dict(orient="records"),
         })
     return side_rows or None
 
