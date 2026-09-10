@@ -64,11 +64,11 @@ def state_prediction(history: pd.DataFrame, fixture: pd.Series):
     return {"home_win": hw, "draw": dr, "away_win": aw, "expected_home_goals": lh, "expected_away_goals": la, "history_games": min(h[2], a[2]), "context": "cross-division" if "cross-division" in (h[3], a[3]) else "same-division"}
 
 def season_outlook(completed, future, league):
-    """Monte Carlo finish using only pre-fixture information and Poisson goals."""
+    """Simulate the remaining season and return a full position-probability table."""
     season = future.season.mode().iat[0]
     played = completed[(completed.league == league) & (completed.season == season)]
     teams = sorted(set(future.home_team) | set(future.away_team) | set(played.home_team) | set(played.away_team))
-    index = {team: i for i, team in enumerate(teams)}; n = 4000
+    index = {team: i for i, team in enumerate(teams)}; n = 10_000
     points = np.zeros((n, len(teams)), dtype=int); gf = np.zeros_like(points); ga = np.zeros_like(points)
     for _, m in played.iterrows():
         h, a = index[m.home_team], index[m.away_team]; hg, ag = int(m.home_goals), int(m.away_goals)
@@ -81,9 +81,39 @@ def season_outlook(completed, future, league):
         h, a = index[m.home_team], index[m.away_team]; hg, ag = rng.poisson(pred["expected_home_goals"], n), rng.poisson(pred["expected_away_goals"], n)
         gf[:,h] += hg; ga[:,h] += ag; gf[:,a] += ag; ga[:,a] += hg
         points[:,h] += (hg > ag) * 3 + (hg == ag); points[:,a] += (ag > hg) * 3 + (hg == ag)
-    winners = np.array([np.lexsort((-gf[i], -(gf[i]-ga[i]), -points[i]))[0] for i in range(n)])
-    ranking = sorted(((teams[i], int((winners == i).sum())) for i in range(len(teams))), key=lambda x: x[1], reverse=True)[:5]
-    return {"season": season, "simulations": n, "teams": [{"team": t, "win_probability": round(w / n, 4)} for t, w in ranking]}
+    # Positions use the standard league ordering: points, goal difference, then goals scored.
+    # An exact tie after those criteria is shared evenly so team-name order cannot affect a probability.
+    position_counts = np.zeros((len(teams), len(teams)), dtype=int)
+    for run in range(n):
+        order = np.lexsort((-gf[run], -(gf[run] - ga[run]), -points[run]))
+        start = 0
+        while start < len(teams):
+            end = start + 1
+            team = order[start]
+            while end < len(teams) and (
+                points[run, order[end]] == points[run, team]
+                and gf[run, order[end]] - ga[run, order[end]] == gf[run, team] - ga[run, team]
+                and gf[run, order[end]] == gf[run, team]
+            ):
+                end += 1
+            # Tied teams occupy the same range of positions; give each an equal share.
+            for position in range(start, end):
+                position_counts[order[start:end], position] += 1
+            start = end
+    table = []
+    for i, team in enumerate(teams):
+        probabilities = position_counts[i] / n
+        most_likely_position = int(probabilities.argmax()) + 1
+        table.append({
+            "team": team,
+            "expected_position": round(float(np.dot(probabilities, np.arange(1, len(teams) + 1))), 2),
+            "most_likely_position": most_likely_position,
+            "most_likely_position_probability": round(float(probabilities.max()), 4),
+            "win_probability": round(float(probabilities[0]), 4),
+            "position_probabilities": [round(float(value), 4) for value in probabilities],
+        })
+    table.sort(key=lambda row: (row["expected_position"], -row["win_probability"]))
+    return {"season": season, "simulations": n, "table": table}
 
 def outcome(hg, ag): return 0 if hg > ag else 1 if hg == ag else 2
 def evaluate(completed):
@@ -123,7 +153,7 @@ def main():
             if pred: card.update({k: round(v, 4) if isinstance(v, float) else v for k,v in pred.items()})
             cards.append(card)
         predictions["leagues"][league] = cards
-        if league in ("premier-league", "championship") and len(fixtures): predictions["season_outlook"][league] = season_outlook(completed, fixtures, league)
+        if league == "premier-league" and len(fixtures): predictions["season_outlook"][league] = season_outlook(completed, fixtures, league)
     (OUT / "predictions.json").write_text(json.dumps(predictions, indent=2), encoding="utf8")
     # Keep display-only colour configuration beside the generated JSON so the
     # static frontend never needs a backend or a hard-coded second colour list.
