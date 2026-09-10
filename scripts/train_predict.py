@@ -30,14 +30,15 @@ def probability(lh, la):
 
 def player_priors(history: pd.DataFrame) -> pd.DataFrame:
     """Return recency-weighted xG/xA rates for players seen in historical FPL data."""
-    if history.empty: return pd.DataFrame(columns=["player_key", "prior_minutes", "prior_xg", "prior_xa"])
+    if history.empty: return pd.DataFrame(columns=["player_key", "prior_minutes", "prior_xg", "prior_xa", "prior_goals", "prior_assists"])
     history = history.copy()
     history["season_year"] = history.season.str[:4].astype(int)
     # 2025-26 is the latest completed season in the imported archive.
     history["weight"] = 0.55 ** (2025 - history.season_year)
-    for column in ["minutes", "xg", "xa"]: history[column] *= history.weight
+    for column in ["minutes", "xg", "xa", "goals", "assists"]: history[column] *= history.weight
     return history.groupby("player_key", as_index=False).agg(
-        prior_minutes=("minutes", "sum"), prior_xg=("xg", "sum"), prior_xa=("xa", "sum"))
+        prior_minutes=("minutes", "sum"), prior_xg=("xg", "sum"), prior_xa=("xa", "sum"),
+        prior_goals=("goals", "sum"), prior_assists=("assists", "sum"))
 
 def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.Series, home_goals: float, away_goals: float):
     """Allocate team xG to likely starters; it never changes the team forecast itself."""
@@ -47,7 +48,8 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         players = current[current.model_team.eq(team) & current.position.ne("GKP") & current.minutes.gt(0)].copy()
         if players.empty: continue
         players = players.merge(priors, how="left", on="player_key")
-        players[["prior_minutes", "prior_xg", "prior_xa"]] = players[["prior_minutes", "prior_xg", "prior_xa"]].fillna(0)
+        prior_columns = ["prior_minutes", "prior_xg", "prior_xa", "prior_goals", "prior_assists"]
+        players[prior_columns] = players[prior_columns].fillna(0)
         team_starts = max(1, float(players.starts.max()))
         team_games = max(1, float(current.starts.max()))
         start_fraction = players.starts / team_starts
@@ -60,8 +62,8 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         prior_weight = 240.0
         goal_default = players.position.map({"DEF": .06, "MID": .16, "FWD": .28}).fillna(.12)
         assist_default = players.position.map({"DEF": .06, "MID": .14, "FWD": .09}).fillna(.10)
-        players["goal_rate"] = (players.xg + prior_weight * (players.prior_xg / players.prior_minutes.replace(0, np.nan)).fillna(goal_default) / 90) / (players.minutes + prior_weight)
-        players["assist_rate"] = (players.xa + prior_weight * (players.prior_xa / players.prior_minutes.replace(0, np.nan)).fillna(assist_default) / 90) / (players.minutes + prior_weight)
+        players["goal_rate"] = (players.xg + .25 * players.goals + prior_weight * ((players.prior_xg + .25 * players.prior_goals) / players.prior_minutes.replace(0, np.nan)).fillna(goal_default) / 90) / (players.minutes + prior_weight)
+        players["assist_rate"] = (players.xa + .20 * players.assists + prior_weight * ((players.prior_xa + .20 * players.prior_assists) / players.prior_minutes.replace(0, np.nan)).fillna(assist_default) / 90) / (players.minutes + prior_weight)
         players["goal_weight"] = (players.goal_rate * players.start_probability).clip(lower=.0001)
         players["assist_weight"] = (players.assist_rate * players.start_probability).clip(lower=.0001)
         players["goal_lambda"] = expected_goals * players.goal_weight / players.goal_weight.sum()
