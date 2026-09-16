@@ -1,0 +1,6 @@
+{
+  "name": "touchline-checks",
+  "private": true,
+  "scripts": {"test": "node tests/test_frontend.cjs"},
+  "devDependencies": {"axe-core": "4.10.3"}
+}

@@ -1,0 +1,45 @@
+{
+  "browser": "Chromium",
+  "url_path": "/PL-predictions/",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "load_ms": 179,
+      "search_ms": 19,
+      "console_errors": [],
+      "failed_requests": [],
+      "axe_violations": 0
+    },
+    {
+      "name": "tablet",
+      "width": 834,
+      "height": 1112,
+      "load_ms": 103,
+      "search_ms": 18,
+      "console_errors": [],
+      "failed_requests": [],
+      "axe_violations": 0
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "load_ms": 107,
+      "search_ms": 18,
+      "console_errors": [],
+      "failed_requests": [],
+      "axe_violations": 0
+    }
+  ],
+  "scenarios": [
+    "loading",
+    "retry",
+    "optional-missing",
+    "stale",
+    "missing-league",
+    "unassigned-round"
+  ],
+  "browser_version": "153.0.8010.12"
+}

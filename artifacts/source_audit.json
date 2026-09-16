@@ -1,0 +1,58 @@
+{
+  "matches": 35020,
+  "completed": 34208,
+  "match_date_range": [
+    "2000-08-19",
+    "2027-05-30"
+  ],
+  "player_seasons": 7358,
+  "current_players": 659,
+  "published_player_rows_checked": 400,
+  "duplicate_fixture_pairs": 0,
+  "duplicate_current_player_codes": 0,
+  "checks": "Fixture identities, dates, same-day cutoff, source annotations, persistent player identity, actual availability, probability bounds and all output invariants passed.",
+  "coverage": {
+    "premier-league": {
+      "season": "2026-27",
+      "teams": 20,
+      "expected_teams": 20,
+      "fixtures": 380,
+      "expected_fixtures": 380,
+      "completed": 40,
+      "upcoming": 340,
+      "unresolved": 0,
+      "duplicate_pairs": 0,
+      "schedule_complete": true,
+      "season_forecast_available": true,
+      "notice": ""
+    },
+    "championship": {
+      "season": "2026-27",
+      "teams": 24,
+      "expected_teams": 24,
+      "fixtures": 552,
+      "expected_fixtures": 552,
+      "completed": 81,
+      "upcoming": 469,
+      "unresolved": 2,
+      "duplicate_pairs": 0,
+      "schedule_complete": true,
+      "season_forecast_available": false,
+      "notice": "2 past fixtures have no confirmed result."
+    },
+    "league-one": {
+      "season": "2026-27",
+      "teams": 24,
+      "expected_teams": 24,
+      "fixtures": 72,
+      "expected_fixtures": 552,
+      "completed": 71,
+      "upcoming": 1,
+      "unresolved": 0,
+      "duplicate_pairs": 0,
+      "schedule_complete": false,
+      "season_forecast_available": false,
+      "notice": "Partial schedule: 72 of 552 expected regular-season fixtures. openfootball has no current-season League One file; only results and forthcoming fixtures available from football-data.co.uk are included."
+    }
+  }
+}

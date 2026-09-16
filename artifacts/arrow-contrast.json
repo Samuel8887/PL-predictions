@@ -1,0 +1,9 @@
+{
+  "element": "Enabled gameweek arrow button",
+  "foreground": "#172c2c",
+  "background": "#ffffff",
+  "contrast_ratio": 14.653810677651292,
+  "minimum": 4.5,
+  "source": "site/styles.css: button ink and .gameweek-nav button white background",
+  "reason": "axe reports arrow-only glyph content as incomplete; checked color pair and inspected screenshots."
+}

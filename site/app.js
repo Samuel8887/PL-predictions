@@ -1,13 +1,133 @@
-const labels={"premier-league":"Premier League",championship:"Championship","league-one":"League One"};
-let data,colours={},league="premier-league",view="matches",gameweek=null;
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-const pct=n=>`${Math.round(n*100)}%`;
-const colour=n=>colours[n]||'#52657b';
+const labels = {'premier-league': 'Premier League', championship: 'Championship', 'league-one': 'League One'};
+let data, colours = {}, league = 'premier-league', view = 'matches', gameweek = null;
+const esc = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+const pct = value => `${Math.round(value * 100)}%`;
+const colour = team => colours[team] || '#52657b';
+const ordinal = value => `${value}${value % 100 >= 11 && value % 100 <= 13 ? 'th' : ({1:'st',2:'nd',3:'rd'}[value % 10] || 'th')}`;
 
-function lineupRows(players){return players.map(player=>`<tr><td>${esc(player.player)}</td><td>${esc(player.position)}</td><td>${pct(player.start_probability)}</td><td>${player.minutes}</td><td>${player.goals}</td><td>${player.assists}</td><td>${Number(player.xg).toFixed(2)}</td><td>${Number(player.xa).toFixed(2)}</td><td>${pct(player.score_probability)}</td><td>${pct(player.assist_probability)}</td></tr>`).join('')}
-function playerPicks(sides){if(!sides)return'';return `<section class="match-details"><h2>Projected squads and player statistics</h2><p>The XI contains the 11 players with the highest estimated start chance; the next nine form the projected bench. It is not a confirmed team sheet. Goal and assist chances are allocated from the match model’s expected goals using current and historical player form.</p>${sides.map(side=>`<section class="player-team"><h3>${esc(side.team)} · most likely XI</h3><p><strong>Most likely scorer:</strong> ${esc(side.top_scorer.player)} (${pct(side.top_scorer.score_probability)}) · <strong>Most likely assister:</strong> ${esc(side.top_assister.player)} (${pct(side.top_assister.assist_probability)})</p><div class="table-wrap"><table class="lineup-table"><thead><tr><th>Player</th><th>Pos.</th><th>Start</th><th>Min.</th><th>G</th><th>A</th><th>xG</th><th>xA</th><th>Score</th><th>Assist</th></tr></thead><tbody>${lineupRows(side.projected_lineup)}</tbody></table></div><h3 class="bench-title">Projected bench</h3><div class="table-wrap"><table class="lineup-table"><thead><tr><th>Player</th><th>Pos.</th><th>Start</th><th>Min.</th><th>G</th><th>A</th><th>xG</th><th>xA</th><th>Score</th><th>Assist</th></tr></thead><tbody>${lineupRows(side.projected_bench)}</tbody></table></div></section>`).join('')}</section>`}
-function card(f){const head=`<div class="fixture-head">${esc(new Date(f.date+'T12:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'}))}${f.kickoff?' · '+esc(f.kickoff):''}<span>Open match</span></div><div class="teams"><span class="accent" style="--team:${colour(f.home_team)}">${esc(f.home_team)}</span><span>vs</span><span class="away"><span class="accent" style="--team:${colour(f.away_team)}">${esc(f.away_team)}</span></span></div>`;if(!f.prediction_available)return `<details class="fixture"><summary>${head}<div class="summary">No statistical estimate yet — insufficient prior data.</div></summary></details>`;const p=[f.home_win,f.draw,f.away_win],m=Math.max(...p),winner=m===p[0]?`${f.home_team} win`:m===p[1]?'Draw':`${f.away_team} win`;return `<details class="fixture"><summary>${head}<div class="prob-labels"><span>${pct(p[0])} home win</span><span>${pct(p[1])} draw</span><span>${pct(p[2])} away win</span></div><div class="bar"><i class="home" style="width:${p[0]*100}%"></i><i class="draw" style="width:${p[1]*100}%"></i><i class="awaybar" style="width:${p[2]*100}%"></i></div><div class="summary">Most likely result: <strong>${esc(winner)}</strong> · Expected goals: ${f.expected_home_goals.toFixed(1)} – ${f.expected_away_goals.toFixed(1)}${f.context==='cross-division'?' · Includes promoted/relegated-club context.':''}</div></summary>${playerPicks(f.player_predictions)}</details>`}
-function ordinal(n){return `${n}${n===1?'st':n===2?'nd':n===3?'rd':'th'}`}
-function table(outlook){return `<div class="outlook"><h2>Premier League projected table</h2><p>The expected finish is the average across all simulations; the most likely finish is the single position that happened most often.</p><p>Expected finishing position in ${esc(outlook.season)}, from ${outlook.simulations.toLocaleString()} full-season simulations.</p><div class="table-wrap"><table class="league-table"><thead><tr><th>Expected finish</th><th>Team</th><th>Most likely finish</th><th>Title chance</th></tr></thead><tbody>${outlook.table.map(row=>`<tr><td class="position">${row.expected_position.toFixed(1)}</td><td>${esc(row.team)}</td><td>${ordinal(row.most_likely_position)} · ${pct(row.most_likely_position_probability)}</td><td>${pct(row.win_probability)}</td></tr>`).join('')}</tbody></table></div><div class="explanation"><h2>How the probability is calculated</h2><p>Each remaining fixture is simulated using the same league-aware Poisson model as the match predictions. Team attack and defence are estimated from earlier matches, with recent games weighted more heavily and sparse histories pulled toward the league average. The simulation adds those sampled results to the points, goal difference and goals already recorded, then ranks the final table by the Premier League order: points, goal difference and goals scored. “Most likely finish” is the final position that occurred most often for that team, followed by its chance across 10,000 simulations. “Expected finish” is the average final position, used to order the complete table.</p></div></div>`}
-function render(){const fs=data.leagues[league]||[],isPremier=league==='premier-league',showTable=isPremier&&view==='table',weeks=[...new Set(fs.map(f=>f.matchweek).filter(Number.isInteger))].sort((a,b)=>a-b);if(!weeks.includes(gameweek))gameweek=weeks[0]??null;const weekIndex=weeks.indexOf(gameweek),weekFixtures=gameweek===null?fs:fs.filter(f=>f.matchweek===gameweek),available=weekFixtures.filter(f=>f.prediction_available).length;document.querySelector('#premier-views').hidden=!isPremier;document.querySelector('#gameweek-nav').hidden=showTable||gameweek===null;document.querySelector('#gameweek-title').textContent=gameweek===null?'Gameweek unavailable':`Gameweek ${gameweek}`;document.querySelector('#previous-gameweek').disabled=weekIndex<=0;document.querySelector('#next-gameweek').disabled=weekIndex===-1||weekIndex>=weeks.length-1;document.querySelector('#status').textContent=showTable?`${labels[league]} · projected final table`:`${labels[league]} · Gameweek ${gameweek} · ${weekFixtures.length} fixtures · ${available} statistical estimates`;document.querySelector('#fixtures').hidden=showTable;document.querySelector('#fixtures').innerHTML=weekFixtures.length?weekFixtures.map(card).join(''):`<p class="empty">No upcoming fixtures are available for this gameweek.</p>`;const outlook=data.season_outlook?.[league];document.querySelector('#outlook').innerHTML=showTable&&outlook?.table?table(outlook):'';document.querySelectorAll('button[data-league]').forEach(b=>b.classList.toggle('active',b.dataset.league===league));document.querySelectorAll('button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view))}
-document.querySelectorAll('button[data-league]').forEach(b=>b.onclick=()=>{league=b.dataset.league;view='matches';gameweek=null;render()});document.querySelectorAll('button[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;render()});document.querySelector('#previous-gameweek').onclick=()=>{const weeks=[...new Set((data.leagues[league]||[]).map(f=>f.matchweek).filter(Number.isInteger))].sort((a,b)=>a-b),i=weeks.indexOf(gameweek);if(i>0){gameweek=weeks[i-1];render()}};document.querySelector('#next-gameweek').onclick=()=>{const weeks=[...new Set((data.leagues[league]||[]).map(f=>f.matchweek).filter(Number.isInteger))].sort((a,b)=>a-b),i=weeks.indexOf(gameweek);if(i>=0&&i<weeks.length-1){gameweek=weeks[i+1];render()}};Promise.all([fetch('data/predictions.json?v=6').then(r=>r.json()),fetch('data/team_colours.json?v=6').then(r=>r.json())]).then(([x,c])=>{data=x;colours=c;document.querySelector('#updated').textContent=`Last updated: ${new Date(x.generated_at).toLocaleString()}.`;render()}).catch(()=>document.querySelector('#status').textContent='Prediction data could not be loaded.');
+function lineupRows(players) {
+  return players.map(player => `<tr><td>${esc(player.player)}</td><td>${esc(player.position)}</td><td>${pct(player.start_probability)}</td><td>${player.minutes}</td><td>${player.goals}</td><td>${player.assists}</td><td>${Number(player.xg).toFixed(2)}</td><td>${Number(player.xa).toFixed(2)}</td><td>${pct(player.score_probability)}</td><td>${pct(player.assist_probability)}</td></tr>`).join('');
+}
+function squadTable(players) {
+  return `<p class="scroll-hint">Scroll sideways to see all columns.</p><div class="table-wrap" tabindex="0" role="region" aria-label="Player statistics, scroll horizontally"><table class="lineup-table"><thead><tr>${['Player','Pos.','Start','Min.','G','A','xG','xA','Score','Assist'].map(label => `<th scope="col">${label}</th>`).join('')}</tr></thead><tbody>${lineupRows(players)}</tbody></table></div>`;
+}
+function playerPicks(sides) {
+  if (!sides?.length) return '<p class="match-details">Player projections are available only for Premier League fixtures within 14 days and a verified recent player snapshot.</p>';
+  return `<section class="match-details"><h2>Projected squads & player statistics</h2><p>The XI selects eligible players in a plausible formation; up to nine others form the projected bench. It is not a confirmed team sheet. Start and performance chances are heuristic estimates. Min., G, A, xG and xA are current-season totals.</p>${sides.map(side => `<section class="player-team"><h3>${esc(side.team)} · projected XI</h3><p><strong>Scorer pick:</strong> ${esc(side.top_scorer.player)} (${pct(side.top_scorer.score_probability)}) · <strong>Assist pick:</strong> ${esc(side.top_assister.player)} (${pct(side.top_assister.assist_probability)})</p>${side.projected_lineup.length ? squadTable(side.projected_lineup) : '<p>Not enough eligible players for a complete formation.</p>'}<h3 class="bench-title">Projected bench</h3>${squadTable(side.projected_bench)}</section>`).join('')}</section>`;
+}
+function card(fixture) {
+  const date = new Date(fixture.date + 'T12:00').toLocaleDateString(undefined, {weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  const heading = `<div class="fixture-head">${esc(date)}${fixture.kickoff ? ' · ' + esc(fixture.kickoff) : ''}<span>Match details ↗</span></div><div class="teams"><span class="accent" style="--team:${colour(fixture.home_team)}">${esc(fixture.home_team)}</span><span>VS</span><span class="away"><span class="accent" style="--team:${colour(fixture.away_team)}">${esc(fixture.away_team)}</span></span></div>`;
+  if (!fixture.prediction_available) return `<details class="fixture"><summary>${heading}<div class="summary">No statistical estimate yet — insufficient prior data.</div></summary></details>`;
+  const probabilities = [fixture.home_win, fixture.draw, fixture.away_win];
+  const outcomes = [`${fixture.home_team} win`, 'Draw', `${fixture.away_team} win`];
+  const winner = outcomes[probabilities.indexOf(Math.max(...probabilities))];
+  return `<details class="fixture"><summary>${heading}<div class="prob-labels"><span>${pct(probabilities[0])} home</span><span>${pct(probabilities[1])} draw</span><span>${pct(probabilities[2])} away</span></div><div class="bar" aria-hidden="true"><i class="home" style="width:${probabilities[0]*100}%"></i><i class="draw" style="width:${probabilities[1]*100}%"></i><i class="awaybar" style="width:${probabilities[2]*100}%"></i></div><div class="summary">Leading outcome: <strong>${esc(winner)}</strong> · Expected goals ${fixture.expected_home_goals.toFixed(1)} – ${fixture.expected_away_goals.toFixed(1)}${fixture.context === 'cross-division' ? ' · Limited division history' : ''}</div></summary></details>`;
+}
+function table(outlook) {
+  const showPoints = outlook.table.every(row => Number.isFinite(row.expected_points));
+  return `<div class="outlook"><h2>Season outlook</h2><p>${esc(outlook.season)} · ${outlook.simulations.toLocaleString()} simulations. Expected finish averages every simulation; most likely finish is the most frequent individual position.</p><p class="scroll-hint">Scroll sideways to see all columns.</p><div class="table-wrap" tabindex="0" role="region" aria-label="Season table, scroll horizontally"><table class="league-table"><thead><tr><th scope="col">Expected finish</th><th scope="col">Team</th>${showPoints ? '<th scope="col">Expected points</th>' : ''}<th scope="col">Most likely finish</th><th scope="col">Title chance</th></tr></thead><tbody>${outlook.table.map(row => `<tr><td class="position">${row.expected_position.toFixed(1)}</td><td>${esc(row.team)}</td>${showPoints ? `<td>${row.expected_points.toFixed(1)}</td>` : ''}<td>${ordinal(row.most_likely_position)} · ${pct(row.most_likely_position_probability)}</td><td>${pct(row.win_probability)}</td></tr>`).join('')}</tbody></table></div><div class="explanation"><h2>How to read this table</h2><p>Remaining fixtures are sampled from score distributions calibrated to the match outcome probabilities. Simulated results are added to existing points and goals. Team strengths are held fixed. Exact ties after points, goal difference and goals scored share positions equally; head-to-head and playoffs are not modelled. Displayed percentages are rounded.</p></div></div>`;
+}
+const $ = selector => document.querySelector(selector);
+let search = '';
+const weeksForLeague = () => {
+  const fixtures = data?.leagues[league] || [];
+  const weeks = [...new Set(fixtures.map(f => f.matchweek).filter(Number.isInteger))].sort((a,b) => a-b);
+  if (weeks.length && fixtures.some(f => !Number.isInteger(f.matchweek))) weeks.push('unassigned');
+  return weeks;
+};
+
+function render() {
+  if (!data) return;
+  const fixtures = data.leagues[league] || [];
+  const showTable = view === 'table';
+  const weeks = weeksForLeague();
+  if (!weeks.includes(gameweek)) gameweek = weeks[0] ?? null;
+  const weekIndex = weeks.indexOf(gameweek);
+  const selected = fixtures.filter(f => (search || gameweek === null || f.matchweek === gameweek || (gameweek === 'unassigned' && !Number.isInteger(f.matchweek))) && (!search || `${f.home_team} ${f.away_team}`.toLowerCase().includes(search)));
+  $('#premier-views').hidden = false;
+  const coverage = data.coverage?.[league];
+  $('#coverage-notice').hidden = !coverage?.notice;
+  $('#coverage-notice').textContent = coverage?.notice || '';
+  $('#gameweek-nav').hidden = showTable || gameweek === null || Boolean(search);
+  $('#team-search').disabled = showTable;
+  $('#gameweek-title').textContent = gameweek === 'unassigned' ? 'Round unassigned' : `Gameweek ${gameweek ?? '—'}`;
+  $('#previous-gameweek').disabled = weekIndex <= 0;
+  $('#next-gameweek').disabled = weekIndex < 0 || weekIndex >= weeks.length - 1;
+  $('#metric-league').textContent = labels[league];
+  $('#metric-count').textContent = fixtures.length;
+  const estimated = fixtures.filter(f => f.prediction_available);
+  $('#metric-goals').textContent = estimated.length ? (estimated.reduce((sum, f) => sum + f.expected_home_goals + f.expected_away_goals, 0) / estimated.length).toFixed(2) : '—';
+  $('#status').textContent = showTable ? `${labels[league]} · season outlook` : `${selected.length} fixtures · ${selected.filter(f => f.prediction_available).length} estimates${search ? ' · all gameweeks' : ''}`;
+  $('#fixtures').hidden = showTable;
+  // Only create squad tables when a user opens a card.
+  $('#fixtures').innerHTML = showTable ? '' : selected.length ? selected.map((fixture, index) => card({...fixture, player_predictions: null}).replace('<details ', `<details data-index="${index}" `)).join('') : '<p class="empty">No fixtures found. Try another club or competition.</p>';
+  $('#fixtures').querySelectorAll('details').forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open && !detail.dataset.loaded) {
+        detail.insertAdjacentHTML('beforeend', playerPicks(selected[Number(detail.dataset.index)].player_predictions));
+        detail.dataset.loaded = 'true';
+      }
+    });
+  });
+  const outlook = data.season_outlook?.[league];
+  $('#outlook').innerHTML = showTable ? (outlook?.table ? table(outlook) : `<p class="empty">Season outlook is unavailable. ${esc(coverage?.notice || 'Complete schedules, confirmed past results and sufficient team history are required.')}</p>`) : '';
+  document.querySelectorAll('button[data-league]').forEach(button => {
+    button.classList.toggle('active', button.dataset.league === league);
+    button.setAttribute('aria-pressed', String(button.dataset.league === league));
+  });
+  document.querySelectorAll('button[data-view]').forEach(button => {
+    button.classList.toggle('active', button.dataset.view === view);
+    button.setAttribute('aria-pressed', String(button.dataset.view === view));
+  });
+}
+
+document.querySelectorAll('button[data-league]').forEach(button => button.addEventListener('click', () => {
+  league = button.dataset.league; view = 'matches'; gameweek = null; render();
+}));
+document.querySelectorAll('button[data-view]').forEach(button => button.addEventListener('click', () => {
+  view = button.dataset.view; render();
+}));
+$('#team-search').addEventListener('input', event => { search = event.target.value.trim().toLowerCase(); render(); });
+for (const [selector, delta] of [['#previous-gameweek', -1], ['#next-gameweek', 1]]) {
+  $(selector).addEventListener('click', () => {
+    const weeks = weeksForLeague(), next = weeks.indexOf(gameweek) + delta;
+    if (next >= 0 && next < weeks.length) { gameweek = weeks[next]; render(); }
+  });
+}
+async function fetchJSON(path) {
+  const response = await fetch(path, {cache: 'no-cache'});
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+}
+async function load() {
+  data = null;
+  $('#status').textContent = 'Loading forecasts…';
+  $('#fixtures').innerHTML = '';
+  $('#outlook').innerHTML = '';
+  document.querySelectorAll('nav button, #team-search').forEach(control => { control.disabled = true; });
+  try {
+    const [predictions, palette, report] = await Promise.all([
+      fetchJSON('data/predictions.json'),
+      fetchJSON('data/team_colours.json').catch(() => ({})),
+      fetchJSON('data/evaluation.json').catch(() => null)
+    ]);
+    if (!predictions.leagues || !Number.isFinite(Date.parse(predictions.generated_at)) || Object.values(predictions.leagues).some(fixtures => !Array.isArray(fixtures))) throw new Error('Invalid forecast data');
+    data = predictions;
+    colours = Object.fromEntries(Object.entries(palette).filter(([, value]) => /^#[0-9a-f]{6}$/i.test(value)));
+    const generated = new Date(data.generated_at);
+    $('#updated').textContent = `Forecast generated ${generated.toLocaleString()}.`;
+    $('#metric-date').textContent = generated.toLocaleDateString(undefined, {day: 'numeric', month: 'short'});
+    const legacy = data.snapshot_kind === 'legacy';
+    const stale = Date.now() - generated.getTime() > 48 * 60 * 60 * 1000;
+    $('#data-notice').hidden = !legacy && !stale;
+    $('#data-notice').textContent = legacy ? 'Archived forecast preview · These match estimates came with the original project. Rebuild to apply the updated model. Previous squad and season projections have been withheld because they were affected by calculation errors.' : 'This forecast is over 48 hours old. Results, schedules and availability may have changed.';
+    $('#evaluation').textContent = report?.fixtures ? `${legacy ? 'Original model evaluation' : 'Chronological evaluation'}: ${report.fixtures} fixtures · log loss ${Number(report.log_loss).toFixed(3)} (baseline ${Number(report.baseline_log_loss).toFixed(3)}) · accuracy ${pct(report.accuracy)}. Lower log loss is better. Player estimates are not validated by this report.` : 'Evaluation unavailable.';
+    document.querySelectorAll('nav button, #team-search').forEach(control => { control.disabled = false; });
+    render();
+  } catch (error) {
+    $('#status').innerHTML = 'Forecasts could not be loaded. <button id="retry">Try again</button>';
+    $('#retry').addEventListener('click', load);
+  }
+}
+load();
