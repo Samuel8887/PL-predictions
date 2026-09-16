@@ -37,6 +37,7 @@ def parse_day(line: str, season: str) -> date | None:
     return date(actual_year, month_day.month, month_day.day)
 
 def parse_fixture(text: str):
+    text = re.sub(r"\s*\[[^]]+\]", "", text).strip()
     kickoff = None
     m = TIME_RE.match(text)
     if m: kickoff, text = m.groups()
@@ -61,32 +62,62 @@ def parse_repo(source: Path, build_date: date) -> pd.DataFrame:
         for filename, league in LEAGUES.items():
             file = folder / filename
             if not file.exists(): continue
-            current_date, matchweek = None, None
+            current_date, matchweek, last_kickoff, opening_date = None, None, None, None
             for raw in file.read_text(encoding="utf8").splitlines():
                 line = raw.strip()
-                md = re.search(r"Matchday\s+(\d+)", line)
-                if md: matchweek = int(md.group(1)); continue
+                declared = re.match(r'^# Dates?\s+(.+?)\s+-\s+',line)
+                if declared:
+                    opening_date = parse_day(declared.group(1),folder.name)
+                # Promotion playoffs are not regular league fixtures or table results.
+                if line.startswith('▪') and re.search(r'Final|Play.?off', line, re.I): break
+                md = re.search(r"(?:Matchday\s+|Regular Season\s*-\s*)(\d+)|(?:^▪\s*)(\d+)\.\s*Round", line)
+                if md: matchweek = int(md.group(1) or md.group(2)); continue
                 parsed_day = parse_day(line, folder.name)
-                if parsed_day: current_date = parsed_day; continue
+                if parsed_day:
+                    # COVID-delayed July/August matches belong to the ending year.
+                    # The declared opening date disambiguates yearless summer dates.
+                    if opening_date and parsed_day < opening_date and not re.search(r'\d{4}$',line):
+                        parsed_day = parsed_day.replace(year=parsed_day.year+1)
+                    current_date = parsed_day; last_kickoff = None; continue
                 if not current_date or not line or line.startswith(("#", "=", "▪")): continue
                 fixture = parse_fixture(raw)
                 if not fixture: continue
                 home, away, kickoff, hg, ag = fixture
+                last_kickoff = kickoff or last_kickoff
+                kickoff = last_kickoff
                 home, away = normalise_team(home, aliases), normalise_team(away, aliases)
-                completed = hg is not None and current_date <= build_date
+                completed = hg is not None and current_date < build_date
                 rows.append({"date": current_date.isoformat(), "season": folder.name, "league": league,
                   "matchweek": matchweek, "kickoff": kickoff, "home_team": home, "away_team": away,
                   "home_team_id": team_id(home), "away_team_id": team_id(away), "home_goals": hg if completed else None,
                   "away_goals": ag if completed else None, "status": "completed" if completed else ("upcoming" if current_date >= build_date else "incomplete")})
     if not rows:
         raise ValueError("No fixtures parsed; check the source directory and season format")
-    return pd.DataFrame(rows).drop_duplicates(subset=["league", "season", "home_team_id", "away_team_id", "date"]).sort_values(["date", "league", "matchweek"], na_position="last")
+    data = pd.DataFrame(rows)
+    # A postponed fixture and its rescheduled result represent one home/away pair.
+    data['has_result'] = data.status.eq('completed')
+    data = data.sort_values(['has_result', 'date']).drop_duplicates(
+        subset=['league', 'season', 'home_team_id', 'away_team_id'], keep='last')
+    return data.drop(columns='has_result').sort_values(["date", "league", "matchweek"], na_position="last")
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--source", type=Path, default=ROOT / ".cache" / "england"); p.add_argument("--output", type=Path, default=ROOT / "data" / "matches.csv"); p.add_argument("--as-of", default=date.today().isoformat()); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--source", type=Path, default=ROOT / ".cache" / "england"); p.add_argument("--output", type=Path, default=ROOT / "data" / "matches.csv"); p.add_argument("--as-of", default=date.today().isoformat())
+    p.add_argument('--offline', action='store_true'); p.add_argument('--supplement-current', action='store_true')
+    args = p.parse_args()
     if not args.source.exists():
+        if args.offline: raise FileNotFoundError('Offline mode requires an existing source checkout')
         args.source.parent.mkdir(parents=True, exist_ok=True)
         subprocess.run(["git", "clone", "--depth", "1", "https://github.com/openfootball/england.git", str(args.source)], check=True)
-    data = parse_repo(args.source, date.fromisoformat(args.as_of)); args.output.parent.mkdir(parents=True, exist_ok=True); data.to_csv(args.output, index=False)
+    data = parse_repo(args.source, date.fromisoformat(args.as_of))
+    sources = []
+    if args.supplement_current:
+        if args.as_of != date.today().isoformat(): raise ValueError('Current live supplements cannot be used for a historical as-of import')
+        import source_data
+        from current_matches import supplement
+        source_data.OFFLINE = args.offline
+        data, sources = supplement(data, date.fromisoformat(args.as_of))
+    args.output.parent.mkdir(parents=True, exist_ok=True); data.to_csv(args.output, index=False)
+    revision = subprocess.run(['git','-C',str(args.source),'rev-parse','HEAD'],capture_output=True,text=True).stdout.strip()
+    (args.output.parent / 'match_sources.json').write_text(json.dumps({'as_of':args.as_of,'openfootball_revision':revision,'supplements':sources},indent=2))
     print(f"Parsed {len(data):,} fixtures ({(data.status == 'completed').sum():,} completed) into {args.output}")
 if __name__ == "__main__": main()

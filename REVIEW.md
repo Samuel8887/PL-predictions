@@ -1,56 +1,74 @@
-# Code review and upgrade notes
+# Validation and fixes — 16 September 2026
 
-Reviewed all supplied Python scripts, frontend files, configuration, workflow, README and generated JSON structure. Updated September 14, 2026.
+This review supersedes the earlier offline-only audit. The downloads, real-data build and Chromium checks succeeded. No public deployment was performed.
 
-## Correctness fixes
+## Changes implemented
 
-| Finding | Change |
-| --- | --- |
-| Player historical rates were divided by 90 twice | Keep historical and positional fallback rates in consistent per-minute units |
-| Player stats were joined using rounded floats | Join calculated statistics by preserved row index |
-| Squad selection could choose several goalkeepers and unavailable players | Search plausible formations, require one goalkeeper, exclude unavailable statuses; allow incomplete bench |
-| Fixed ten-goal probability grid lost tail mass | Adaptive Poisson grid with normalized probabilities |
-| Season simulations ignored calibrated match odds | Sample scores from an outcome-calibrated grid |
-| Each exact tie received full probability at multiple positions | Allocate equal fractional mass across tied positions |
-| Home and away priors used one pooled scoring average | Shrink each rate to the corresponding venue scoring average |
-| Cross-division normalization used only the target league, making it ineffective | Remove misleading normalization and apply explicitly heuristic stronger shrinkage |
-| Distant forecasts artificially weakened current ratings through time decay | Freeze forward forecasts to today's information date |
-| Today's availability and squad projection were repeated for months | Restrict player projections to a 14-day horizon |
-| Archive years and prior age were hard-coded | Derive years from the date and imported history |
-| Archive numeric suffixes and accents broke player matching | Normalize both, while documenting remaining identity ambiguity |
-| Empty imports failed obscurely; duplicates could overweight matches | Clear empty-source error and duplicate fixture removal |
+- Fixed round-heading variants, carried-forward kickoff times, postponed/awarded annotations, rescheduled fixture duplication, playoff contamination and COVID-delayed summer dates. Regular-season team identities no longer contain score or status text.
+- Supplemented incomplete current data with official FPL fixtures and football-data.co.uk results. Added explicit schedule audits; incomplete schedules and unresolved past results cannot silently produce season tables.
+- Replaced player-name matching with persistent FPL codes across 2016–17 through 2025–26. All 7,358 player-season rows map to codes; 528 of 659 current players have historical coverage. Remaining players use positional priors. All current team names match the Premier League schedule.
+- Corrected missing-xG exposure denominators, guarded zero-rate allocations, capped starting probabilities by positional capacity, and bounded scoring/assisting chances by availability. Same-day/future results and unfinished rows cannot enter historical team predictions.
+- Added fixed seasonal evaluation with an original-code comparison and a per-league historical baseline. No speculative parameter upgrades were selected using test results.
+- Fixed controls during loading, retry behavior, access to fixtures with unassigned rounds, keyboard focus in expandable cards, keyboard-scrollable tables and mobile scroll hints. Removed a transient low-contrast league-button animation exposed by repeated accessibility checks.
+- Added dependency constraints, real-data/artifact validators, reproducible browser checks and a workflow that actually runs the checks before producing a Pages artifact.
 
-## Design and performance
+## Real chronological evaluation
 
-A new cream, forest-green and lime dashboard replaces the narrow plain layout. It includes responsive match cards, competition and gameweek navigation, a season view, team search across gameweeks, summary metrics and an expandable methodology panel. Text retains numerical probabilities so bars are not the only way to interpret a forecast.
+Validation: 2024-07-01 through 2025-07-01 (exclusive); 482 eligible sampled fixtures. Both implementations selected exponent **1.0**. The final test covers **2025-08-01 through 2026-05-24**, all **1,484** regular-season fixtures in 2025–26; **0 skipped**.
 
-Accessibility provisions include a skip link, visible keyboard focus, labelled search/navigation, pressed button states, native details elements, table header scopes and reduced-motion support. These are implementation provisions, not a certified accessibility audit.
+Original code: Git revision `45ad019`. Both implementations received the same repaired match histories and identical fixture-date information cutoffs. The comparison isolates the team-probability implementation; it does not compare historical player projections or reproduce the old corrupt input parser. Final outcomes did not choose parameters. A discovered date-parsing bug was corrected and the same evaluation rerun without tuning.
 
-Repeated match calculations are reused for season simulations. Season rankings use NumPy sorting, with Python loops only for exact ties. Squad table markup is deferred until a match opens. JSON is compact, and player forecasts are no longer generated for the entire remaining season. The bundled payload is much smaller principally because invalid legacy squad/season results were removed; this is not a like-for-like performance benchmark.
+Brier score is the sum across the three outcome classes (range 0–2). ECE is top-choice confidence calibration error using 0.2-wide bins; smaller is better, but a constant baseline can have low ECE without useful discrimination.
 
-The frontend now checks HTTP errors, provides retry, tolerates an unavailable colour or evaluation file, validates colour strings and escapes names. Missing forecasts and stale data have explicit states.
+| League / model | N | Log loss | Brier | Accuracy | ECE |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| All leagues — corrected | 1484 | 1.05822 | 0.63801 | 45.62% | 0.02016 |
+| All leagues — original | 1484 | 1.05911 | 0.63863 | 45.82% | 0.02470 |
+| All leagues — baseline | 1484 | 1.07570 | 0.65088 | 43.53% | 0.00507 |
+| Premier League — corrected | 380 | 1.04305 | 0.62634 | 48.16% | 0.04128 |
+| Premier League — original | 380 | 1.04356 | 0.62665 | 48.68% | 0.03627 |
+| Premier League — baseline | 380 | 1.08183 | 0.65508 | 42.63% | 0.03154 |
+| Championship — corrected | 552 | 1.07318 | 0.64920 | 42.75% | 0.01507 |
+| Championship — original | 552 | 1.07312 | 0.64910 | 42.57% | 0.01650 |
+| Championship — baseline | 552 | 1.08285 | 0.65598 | 41.67% | 0.01792 |
+| League One — corrected | 552 | 1.05371 | 0.63484 | 46.74% | 0.04086 |
+| League One — original | 552 | 1.05581 | 0.63642 | 47.10% | 0.04520 |
+| League One — baseline | 552 | 1.06432 | 0.64291 | 46.01% | 0.02599 |
 
-## Verification
+Per-league test dates: Premier League **15 August 2025–24 May 2026**; Championship **8 August 2025–2 May 2026**; League One **1 August 2025–2 May 2026**. The baseline uses only each league’s pre-test outcomes, with add-one smoothing. Later test predictions can incorporate earlier test results, always excluding the fixture day and future results.
 
-- 13 Python tests pass, including a full isolated synthetic CSV → evaluation → forecast → season JSON build.
-- Regression coverage includes high-goal probability tails, zero-goal histories, calibration consistency, exact ties, same-day leakage protection, legal formations, unavailable players, historical units, rounded-stat joins and parser formats.
-- JavaScript syntax and lightweight UI logic checks pass for loading, search, empty states, ordinal formatting, escaping and archived-snapshot disclosure.
-- GitHub Actions runs both Python and JavaScript checks before importing source data and deploying.
-- Real browser screenshots, responsive layout and interaction checks **could not run**: no browser binary was installed, and the browser download was denied by the environment's network policy. The responsive styling therefore needs a real browser review.
-- The full historical rebuild and before/after accuracy comparison **could not run**: raw training CSVs were absent from the ZIP and the source repository download returned HTTP 403 under the environment's network policy.
-- GitHub Pages deployment itself has not been run from this workspace.
+The corrected model slightly improves aggregate log loss and Brier score but reduces accuracy versus the original. The descriptive paired date-cluster bootstrap estimates corrected-minus-original log loss at **−0.000886**, with a 95% interval of approximately **[−0.002045, +0.000192]**. This interval crosses zero. There is **no convincing evidence of an overall accuracy improvement** over the original. The corrected model outperforms the constant historical baseline on aggregate log loss, Brier and accuracy in this one season; that is not evidence of general superiority.
 
-The included preview retains the original match forecast date and identifies those forecasts as version 1 archived estimates. Known-affected player and season outputs are withheld. The original evaluation is explicitly labelled as belonging to the original model. The code generates version 2 outputs when rebuilt; no improved accuracy numbers are claimed.
+Full confidence bins, all evaluated fixture probabilities and dates are in [evaluation.json](site/data/evaluation.json) and [evaluation_fixtures.json](site/data/evaluation_fixtures.json). The reproducible descriptive uncertainty calculation is [compare_uncertainty.py](scripts/compare_uncertainty.py). No historical player accuracy claim is made.
 
-## Next modelling experiments
+## Forecast refresh and coverage
 
-These require training data and chronological comparisons before adoption:
+- **Premier League:** 380/380 scheduled matches, 40 confirmed results and 340 upcoming fixtures. A 20-team, 10,000-run season outlook and 20 projected squads across ten near-term matches were generated.
+- **Championship:** 552/552 scheduled matches, 81 confirmed results, 469 upcoming fixtures and two unresolved past results: Bristol City–Lincoln City and Middlesbrough–Millwall, both 15 September. The available feeds had not supplied confirmed scores; its season table is withheld.
+- **League One:** 72/552 fixtures available for 2026–27: 71 confirmed results and AFC Wimbledon–Milton Keynes Dons on 17 September. The openfootball repository has no current-season League One file. The secondary source publishes completed results and a short forthcoming-fixture feed, not a full season schedule. This repairs the completely empty view but cannot establish season completeness.
+- The archived preview was replaced only after the real-data build passed output invariants. Fresh JSON includes matches, near-term player projections, evaluation, Premier League season outlook, source coverage and player-identity reports. Source URLs, hashes and snapshot timestamps are recorded.
 
-1. Fit opponent-adjusted attack/defence strengths rather than directly averaging scores. Compare both log loss and calibration against this corrected baseline.
-2. Fit a low-score dependency correction and tune time decay on earlier validation windows. Do not hard-code a draw boost without measuring it.
-3. Learn promotion/relegation transition effects from clubs moving between divisions. Scoring averages alone do not measure competition strength.
-4. Use fixture-level recent minutes, confirmed injury dates, stable player identifiers and observed substitutions to fit expected minutes and start probabilities. Handle missing historical xG coverage explicitly.
-5. Add dynamic team-strength uncertainty to season simulations, plus schedule completeness checks, points deductions and competition-specific head-to-head handling.
-6. Add rolling-origin evaluation across multiple seasons and per-league baselines, with uncertainty intervals. Reserve a final untouched period for model selection decisions.
+## Tests and actual browser verification
 
-The current corrections remove known implementation errors and improve transparency. They do not establish that the forecasts beat either the previous model or other forecasting systems.
+- **23 Python regression tests pass.** They cover normalization, calibrated score sampling, tied finishing distributions, formations, identity aliases, missing-xG exposure, zero-rate allocation, availability caps, parser variants, COVID dates, duplicate schedules, chronological leakage and an isolated build.
+- JavaScript syntax and frontend logic tests pass. `pip check` reports no broken requirements. The complete generated artifact passes strict JSON and forecast invariants. The real-data audit verifies fixture/player identity uniqueness, dates, current availability and published player probabilities.
+- Chromium **153.0.8010.12** tested the real rebuilt site under `/PL-predictions/` at **1440×1000, 834×1112 and 390×844**. League switching, previous/next gameweeks, cross-week team search, no results, squads, repeated expansion, season tables and missing season tables passed.
+- Separate fault-injection scenarios passed for delayed loading, HTTP failure/retry, missing optional files, stale data, a missing league and an unassigned gameweek. Intentional fault responses were isolated from normal-request checks.
+- Keyboard skip navigation, summary activation, visible focus and horizontal table scrolling passed. No page-level horizontal overflow, normal-page console errors or failed asset requests were observed. Axe-core found **zero violations** against WCAG A/AA checks in the match, expanded-squad and season-table states at all three widths. Screenshots were visually inspected. Axe marked the arrow-only gameweek control for manual contrast review; its enabled ink/white color pair measures 14.65:1. This is not a screen-reader certification or a test on physical mobile hardware.
+- Squad tables were absent before expansion, created only for the opened fixture, and not duplicated by repeated toggles. The forecast payload is about **361 KB**. Local unthrottled measurements follow; they are not real-device/network benchmarks.
+
+| Viewport | Initial load | Search interaction |
+| --- | ---: | ---: |
+| 1440×1000 | 179 ms | 19 ms |
+| 834×1112 | 103 ms | 18 ms |
+| 390×844 | 107 ms | 18 ms |
+
+Screenshots: [desktop](artifacts/browser/desktop.png), [tablet](artifacts/browser/tablet.png), [390px mobile](artifacts/browser/mobile.png), [mobile squad](artifacts/browser/mobile-squad.png), [mobile season table](artifacts/browser/mobile-season.png). Machine-readable evidence is in [browser results](artifacts/browser/results.json) and [source audit](artifacts/source_audit.json).
+
+## Deployment and remaining limits
+
+The workflow passed **actionlint 1.7.12**. Its Python, JavaScript, import, generation, artifact-validation and Chromium commands were exercised locally. It uses a full Git checkout so the original implementation is available, caches package downloads, uploads verification evidence, and prevents pull-request deployment. A hosted Linux GitHub Actions execution and the actual public Pages deployment remain **untested**; neither was triggered.
+
+The model does not account for deductions, head-to-head standings rules, promotion playoffs, future transfers, changing team strength or schedule uncertainty. Cross-division shrinkage and all player probabilities remain heuristics. Today’s player snapshot was not used as historical evidence. Browser testing used Chromium only; Firefox, Safari, physical touch devices and a full assistive-technology audit remain untested.
+
+Exact installation, live rebuild, offline replay, audit and browser commands are in [README.md](README.md). No model parameters were changed in response to final-test performance.

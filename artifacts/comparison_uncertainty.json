@@ -1,0 +1,13 @@
+{
+  "comparison": "corrected minus original log loss; negative favors corrected",
+  "mean_difference": -0.0008858288231815532,
+  "bootstrap_unit": "match date",
+  "date_clusters": 197,
+  "resamples": 3000,
+  "seed": 20260916,
+  "interval_95": [
+    -0.002045102714401463,
+    0.00019204260591597098
+  ],
+  "warning": "Descriptive single-season comparison; fixtures and teams are dependent."
+}

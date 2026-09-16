@@ -1,0 +1,29 @@
+test_offline_build (test_build.BuildTests.test_offline_build) ... ok
+test_calibration_includes_confidence_one (test_data_quality.DataQualityTests.test_calibration_includes_confidence_one) ... ok
+test_covid_summer_dates_use_season_end_year (test_data_quality.DataQualityTests.test_covid_summer_dates_use_season_end_year) ... ok
+test_future_and_unfinished_rows_cannot_change_prediction (test_data_quality.DataQualityTests.test_future_and_unfinished_rows_cannot_change_prediction) ... ok
+test_incomplete_or_duplicate_schedule_blocks_table (test_data_quality.DataQualityTests.test_incomplete_or_duplicate_schedule_blocks_table) ... ok
+test_missing_xg_years_do_not_dilute_observed_xg (test_data_quality.DataQualityTests.test_missing_xg_years_do_not_dilute_observed_xg) ... ok
+test_rounds_annotations_rescheduling_and_playoffs (test_data_quality.DataQualityTests.test_rounds_annotations_rescheduling_and_playoffs) ... ok
+test_same_day_source_score_is_not_training_data (test_data_quality.DataQualityTests.test_same_day_source_score_is_not_training_data) ... ok
+test_supplementary_identity_aliases (test_data_quality.DataQualityTests.test_supplementary_identity_aliases) ... ok
+test_validation_tuning_excludes_final_test (test_data_quality.DataQualityTests.test_validation_tuning_excludes_final_test) ... ok
+test_zero_player_rates_finite_and_availability_caps (test_data_quality.DataQualityTests.test_zero_player_rates_finite_and_availability_caps) ... ok
+test_archive_player_key (test_model.ModelTests.test_archive_player_key) ... ok
+test_calibrated_score_grid_matches_outcomes (test_model.ModelTests.test_calibrated_score_grid_matches_outcomes) ... ok
+test_high_scoring_tail_is_normalized (test_model.ModelTests.test_high_scoring_tail_is_normalized) ... ok
+test_historical_prior_has_correct_units (test_model.ModelTests.test_historical_prior_has_correct_units) ... ok
+test_invalid_goal_rates (test_model.ModelTests.test_invalid_goal_rates) ... ok
+test_lineup_has_legal_formation_and_no_duplicate_bench (test_model.ModelTests.test_lineup_has_legal_formation_and_no_duplicate_bench) ... ok
+test_parser_formats_and_leap_day (test_model.ModelTests.test_parser_formats_and_leap_day) ... ok
+test_player_metrics_survive_fractional_join_and_empty_priors (test_model.ModelTests.test_player_metrics_survive_fractional_join_and_empty_priors) ... ok
+test_same_day_and_future_results_excluded (test_model.ModelTests.test_same_day_and_future_results_excluded) ... ok
+test_simulation_uses_calibration (test_model.ModelTests.test_simulation_uses_calibration) ... ok
+test_tied_season_probabilities_sum_to_one (test_model.ModelTests.test_tied_season_probabilities_sum_to_one) ... ok
+test_zero_goals (test_model.ModelTests.test_zero_goals) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.794s
+
+OK
+Wrote 2 upcoming fixtures

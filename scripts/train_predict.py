@@ -5,7 +5,7 @@ previous league matches with exponential time decay and Bayesian shrinkage. Each
 league has its own scoring average and home advantage; there is no random split.
 """
 from __future__ import annotations
-import json, math
+import json, math, argparse, hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
@@ -17,11 +17,6 @@ OUT = ROOT / "site" / "data"
 MIN_TEAM_GAMES = 5
 HALF_LIFE_DAYS = 365 * 2
 LOOKBACK_DAYS = 365 * 8  # older matches have negligible weight and add no useful precision
-FPL_TEAM_NAMES = {
-    "Brighton": "Brighton & Hove Albion", "Leeds": "Leeds United", "Man City": "Manchester City",
-    "Man Utd": "Manchester United", "Newcastle": "Newcastle United", "Nott'm Forest": "Nottingham Forest",
-    "Spurs": "Tottenham Hotspur",
-}
 
 def score_distribution(lh, la, calibration=1.0):
     """Adaptive score grid; calibration preserves score ratios within each outcome."""
@@ -46,28 +41,12 @@ def probability(lh, la):
     return float(np.tril(matrix, -1).sum()), float(np.trace(matrix)), float(np.triu(matrix, 1).sum())
 
 def sharpen(probabilities, exponent):
-    """Calibrate the three-result distribution without altering expected goals."""
+    """Calibrate outcome classes; underlying rates stay fixed, score means can change."""
     if not np.isfinite(exponent) or exponent <= 0:
         raise ValueError("Calibration exponent must be positive and finite")
     values = np.asarray(probabilities, dtype=float) ** exponent
     return values / values.sum()
 
-def fit_probability_sharpness(completed: pd.DataFrame) -> float:
-    """Pick a calibration exponent on an earlier chronological validation slice."""
-    if len(completed) < 500: return 1.0
-    start = completed.date.quantile(.75)
-    sample = completed[completed.date >= start]
-    sample = sample.iloc[::max(1, math.ceil(len(sample) / 500))]
-    rows = []
-    for _, fixture in sample.iterrows():
-        prediction = state_prediction(completed, fixture)
-        if prediction:
-            rows.append((outcome(fixture.home_goals, fixture.away_goals), [prediction["home_win"], prediction["draw"], prediction["away_win"]]))
-    if not rows: return 1.0
-    y, raw = zip(*rows); y, raw = np.asarray(y), np.asarray(raw)
-    candidates = np.arange(.8, 2.01, .1)
-    losses = [float(-np.log(np.array([sharpen(p, value) for p in raw])[np.arange(len(y)), y].clip(1e-12)).mean()) for value in candidates]
-    return round(float(candidates[int(np.argmin(losses))]), 1)
 
 def player_priors(history: pd.DataFrame) -> pd.DataFrame:
     """Return recency-weighted xG/xA rates for players seen in historical FPL data."""
@@ -75,10 +54,13 @@ def player_priors(history: pd.DataFrame) -> pd.DataFrame:
     history = history.copy()
     history["season_year"] = history.season.str[:4].astype(int)
     history["weight"] = 0.55 ** (history.season_year.max() - history.season_year)
-    for column in ["minutes", "xg", "xa", "goals", "assists"]: history[column] *= history.weight
+    for field in ['xg_minutes','xa_minutes']:
+        if field not in history: history[field] = history.minutes
+    for column in ["minutes", "xg", "xa", "goals", "assists",'xg_minutes','xa_minutes']: history[column] *= history.weight
     return history.groupby("player_key", as_index=False).agg(
         prior_minutes=("minutes", "sum"), prior_xg=("xg", "sum"), prior_xa=("xa", "sum"),
-        prior_goals=("goals", "sum"), prior_assists=("assists", "sum"))
+        prior_goals=("goals", "sum"), prior_assists=("assists", "sum"),
+        prior_xg_minutes=('xg_minutes','sum'), prior_xa_minutes=('xa_minutes','sum'))
 
 def projected_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Choose the strongest eligible XI across plausible formations."""
@@ -109,6 +91,9 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         players = players.merge(priors if not priors.empty else player_priors(pd.DataFrame()), how="left", on="player_key")
         prior_columns = ["prior_minutes", "prior_xg", "prior_xa", "prior_goals", "prior_assists"]
         players[prior_columns] = players[prior_columns].astype(float).fillna(0)
+        for field in ['prior_xg_minutes','prior_xa_minutes']:
+            if field not in players: players[field] = players.prior_minutes
+            players[field] = players[field].fillna(0)
         team_starts = max(1, float(players.starts.max()))
         team_games = max(1, float(pool.starts.max()), float(pool.minutes.max()) / 90)
         start_fraction = players.starts / team_starts
@@ -116,6 +101,9 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         players["start_probability"] = (0.10 + 0.90 * (0.65 * start_fraction + 0.35 * minutes_fraction)).clip(.05, .98)
         players.loc[players.status.ne("a"), "start_probability"] *= .35
         players["start_probability"] *= (players.chance_of_playing / 100).clip(0, 1)
+        for mask, capacity in [(players.position.eq('GKP'),1),(players.position.ne('GKP'),10)]:
+            total = players.loc[mask,'start_probability'].sum()
+            if total > capacity: players.loc[mask,'start_probability'] *= capacity / total
         lineup, bench = projected_squad(players)
         attackers = players[players.position.ne("GKP")].copy()
         # A 240-minute historical prior prevents three early-season matches from
@@ -124,17 +112,24 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
         prior_weight = 240.0
         goal_default = attackers.position.map({"DEF": .06, "MID": .16, "FWD": .28}).fillna(.12)
         assist_default = attackers.position.map({"DEF": .06, "MID": .14, "FWD": .09}).fillna(.10)
-        attackers["goal_rate"] = (attackers.xg + .25 * attackers.goals + prior_weight * ((attackers.prior_xg + .25 * attackers.prior_goals) / attackers.prior_minutes.replace(0, np.nan)).fillna(goal_default / 90)) / (attackers.minutes + prior_weight)
-        attackers["assist_rate"] = (attackers.xa + .20 * attackers.assists + prior_weight * ((attackers.prior_xa + .20 * attackers.prior_assists) / attackers.prior_minutes.replace(0, np.nan)).fillna(assist_default / 90)) / (attackers.minutes + prior_weight)
+        prior_g = attackers.prior_goals / attackers.prior_minutes.replace(0,np.nan)
+        prior_a = attackers.prior_assists / attackers.prior_minutes.replace(0,np.nan)
+        prior_xg = (attackers.prior_xg / attackers.prior_xg_minutes.replace(0,np.nan)).fillna(prior_g)
+        prior_xa = (attackers.prior_xa / attackers.prior_xa_minutes.replace(0,np.nan)).fillna(prior_a)
+        attackers["goal_rate"] = (attackers.xg + .25 * attackers.goals + prior_weight * (prior_xg + .25*prior_g).fillna(goal_default/90)) / (attackers.minutes+prior_weight)
+        attackers["assist_rate"] = (attackers.xa + .20 * attackers.assists + prior_weight * (prior_xa + .20*prior_a).fillna(assist_default/90)) / (attackers.minutes+prior_weight)
         # Starter and substitute exposure, capped at 90 minutes; heuristic, not calibrated.
         attackers["expected_minutes"] = 75 * attackers.start_probability + 15 * (1 - attackers.start_probability) * (attackers.chance_of_playing / 100)
         attackers["goal_weight"] = attackers.goal_rate * attackers.expected_minutes
         attackers["assist_weight"] = attackers.assist_rate * attackers.expected_minutes
+        for field in ['goal_weight','assist_weight']:
+            if attackers[field].sum() <= 0: attackers[field] = attackers.expected_minutes
         attackers["goal_lambda"] = expected_goals * attackers.goal_weight / attackers.goal_weight.sum()
         # Not every goal receives an assist, so the total assist opportunity is lower.
         attackers["assist_lambda"] = expected_goals * .78 * attackers.assist_weight / attackers.assist_weight.sum()
-        attackers["score_probability"] = 1 - np.exp(-attackers.goal_lambda)
-        attackers["assist_probability"] = 1 - np.exp(-attackers.assist_lambda)
+        availability = (attackers.chance_of_playing / 100).clip(0,1)
+        attackers["score_probability"] = availability * (1 - np.exp(-attackers.goal_lambda/availability))
+        attackers["assist_probability"] = availability * (1 - np.exp(-attackers.assist_lambda/availability))
         attackers["performance_score"] = attackers.goal_lambda + attackers.assist_lambda
         columns = ["player", "position", "minutes", "goals", "assists", "xg", "xa", "start_probability", "score_probability", "assist_probability", "performance_score"]
         stats = attackers[columns].copy()
@@ -156,6 +151,8 @@ def player_predictions(current: pd.DataFrame, priors: pd.DataFrame, fixture: pd.
 
 def state_prediction(history: pd.DataFrame, fixture: pd.Series, calibration: float = 1.0):
     """Use strictly dates before fixture date. Same-day results are excluded too."""
+    if 'status' in history: history = history[history.status.eq('completed')]
+    history = history.dropna(subset=['home_goals','away_goals'])
     prior = history[(history.league == fixture.league) & (history.date < fixture.date) & (history.date >= fixture.date - pd.Timedelta(days=LOOKBACK_DAYS))].copy()
     if len(prior) < 40: return None
     age = (fixture.date - prior.date).dt.days.clip(lower=0)
@@ -193,8 +190,10 @@ def state_prediction(history: pd.DataFrame, fixture: pd.Series, calibration: flo
 def season_outlook(completed, future, league, calibration=1.0, predictions=None, simulations=10_000):
     """Simulate the remaining season and return a full position-probability table."""
     if future.empty: return None
-    season = future.season.mode().iat[0]
-    future = future[future.season.eq(season) & future.league.eq(league)]
+    future = future[future.league.eq(league)]
+    if future.empty: return None
+    if future.season.nunique() != 1: raise ValueError('Season outlook requires exactly one season')
+    season = future.season.iat[0]
     played = completed[(completed.league == league) & (completed.season == season)]
     teams = sorted(set(future.home_team) | set(future.away_team) | set(played.home_team) | set(played.away_team))
     index = {team: i for i, team in enumerate(teams)}; n = simulations
@@ -205,7 +204,9 @@ def season_outlook(completed, future, league, calibration=1.0, predictions=None,
         points[:,h] += 3 if hg > ag else 1 if hg == ag else 0; points[:,a] += 3 if ag > hg else 1 if hg == ag else 0
     rng = np.random.default_rng(20260909)
     for fixture_index, m in future.iterrows():
-        pred = predictions.get(fixture_index) if predictions is not None else state_prediction(completed, m, calibration)
+        forecast=m.copy()
+        forecast.date=min(m.date,pd.Timestamp.now(tz='Europe/London').normalize().tz_localize(None))
+        pred = predictions.get(fixture_index) if predictions is not None else state_prediction(completed, forecast, calibration)
         if not pred: return None
         h, a = index[m.home_team], index[m.away_team]
         scores = score_distribution(pred["expected_home_goals"], pred["expected_away_goals"], calibration)
@@ -254,72 +255,80 @@ def season_outlook(completed, future, league, calibration=1.0, predictions=None,
 
 def outcome(hg, ag): return 0 if hg > ag else 1 if hg == ag else 2
 def evaluate(completed):
-    completed = completed.sort_values("date")
-    if completed.empty:
-        return {"message": "Not enough chronological validation data."}
-    # Latest 20% is held out chronologically; predictions see only earlier dates.
-    cutoff = completed.date.quantile(.80)
-    calibration = fit_probability_sharpness(completed[completed.date < cutoff])
-    test = completed[completed.date >= cutoff]
-    # A deterministic evenly-spaced sample keeps daily static builds quick while
-    # still testing only genuinely later fixtures from the chronological holdout.
-    test = test.iloc[::max(1, math.ceil(len(test) / 600))]
-    rows = []
-    for _, fixture in test.iterrows():
-        pred = state_prediction(completed, fixture, calibration)
-        if pred: rows.append((outcome(fixture.home_goals, fixture.away_goals), [pred["home_win"], pred["draw"], pred["away_win"]]))
-    if not rows: return {"message": "Not enough chronological validation data."}
-    y, probs = zip(*rows); probs = np.asarray(probs); y = np.asarray(y); onehot = np.eye(3)[y]
-    baseline = completed[completed.date < cutoff]
-    base_p = np.array([(baseline.home_goals > baseline.away_goals).mean(), (baseline.home_goals == baseline.away_goals).mean(), (baseline.home_goals < baseline.away_goals).mean()])
-    bins = []
-    for lo in np.arange(0, 1, .2):
-        mask = (probs.max(axis=1) >= lo) & (probs.max(axis=1) < lo + .2)
-        if mask.any(): bins.append({"range": f"{lo:.1f}-{lo+.2:.1f}", "n": int(mask.sum()), "mean_confidence": round(float(probs.max(1)[mask].mean()), 3), "accuracy": round(float((probs.argmax(1)[mask] == y[mask]).mean()), 3)})
-    return {"validation": "chronological final 20% (evenly-spaced sample, max 600 fixtures)", "fixtures": len(y), "probability_sharpness": calibration, "accuracy": round(float((probs.argmax(1) == y).mean()), 3), "log_loss": round(float(-np.log(probs[np.arange(len(y)), y].clip(1e-12)).mean()), 3), "brier_score": round(float(((probs-onehot)**2).sum(1).mean()), 3), "baseline_accuracy": round(float((np.argmax(base_p) == y).mean()), 3), "baseline_log_loss": round(float(-np.log(base_p[y]).mean()), 3), "calibration": bins}
+    from evaluation import evaluate_models
+    import sys
+    return evaluate_models(completed,sys.modules[__name__],ROOT)[0]
 
-def main():
+
+def main(output=None, compare=True):
+    from current_matches import season_for, canonical
+    from validation import coverage, validate_predictions
+    from evaluation import evaluate_models
+    import sys
+    out = Path(output) if output else OUT
+    today = pd.Timestamp.now(tz='Europe/London').normalize().tz_localize(None)
+    season = season_for(today.date())
     matches = pd.read_csv(ROOT / "data" / "matches.csv")
     matches["date"] = pd.to_datetime(matches["date"], format="mixed", errors="raise")
-    completed = matches[matches.status.eq("completed")].dropna(subset=["home_goals", "away_goals"]).copy()
+    completed = matches[matches.status.eq("completed") & (matches.date < today)].dropna(subset=["home_goals", "away_goals"]).copy()
     completed = completed.sort_values("date").reset_index(drop=True)
     completed[["home_goals", "away_goals"]] = completed[["home_goals", "away_goals"]].astype(int)
     current_path, history_path = ROOT / "data" / "current_players.csv", ROOT / "data" / "player_history.csv"
     current = pd.read_csv(current_path) if current_path.exists() else pd.DataFrame()
     history = pd.read_csv(history_path) if history_path.exists() else pd.DataFrame()
     if not current.empty:
-        current["model_team"] = current.team.replace(FPL_TEAM_NAMES)
+        current["model_team"] = current.team.map(canonical)
+    if not history.empty: history = history[history.season.str[:4].astype(int) < int(season[:4])]
     priors = player_priors(history) if not history.empty else pd.DataFrame()
-    report = evaluate(completed)
+    report, evaluation_rows = evaluate_models(completed,sys.modules[__name__],ROOT,compare=compare)
+    quality = coverage(matches,season)
+    player_path = ROOT / 'data/player_sources.json'
+    player_report = json.loads(player_path.read_text(encoding='utf8')) if player_path.exists() else {'message':'Player snapshot provenance unavailable.'}
+    snapshot_time = pd.Timestamp(player_report.get('fetched_at','1900-01-01T00:00Z'))
+    player_fresh = player_report.get('season') == season and pd.Timedelta(0) <= pd.Timestamp.now(tz='UTC')-snapshot_time <= pd.Timedelta(hours=48)
+    pl = matches[matches.league.eq('premier-league') & matches.season.eq(season)]
+    pl_teams=set(pl.home_team)|set(pl.away_team)
+    player_report['unmatched_teams'] = sorted(set(current.model_team)-pl_teams) if not current.empty else []
+    player_report['projection_enabled'] = player_fresh and not player_report['unmatched_teams']
+    if not player_report['projection_enabled']: current=pd.DataFrame()
+
     # Use the exponent selected before the untouched final validation period,
     # rather than re-fitting on every completed result and over-sharpening odds.
     probability_sharpness = report.get("probability_sharpness", 1.0)
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "evaluation.json").write_text(json.dumps(report, indent=2), encoding="utf8")
-    predictions = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="minutes"), "model_version": "2.0", "snapshot_kind": "rebuilt", "source": "openfootball/england", "leagues": {}, "season_outlook": {}}
-    for league in sorted(matches.league.unique()):
-        fixtures = matches[(matches.league == league) & (matches.status == "upcoming")].sort_values("date")
+
+    predictions = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="minutes"), "model_version": "2.1", "as_of": str(today.date()), "season": season, "coverage": quality, "player_snapshot": {k:player_report.get(k) for k in ["fetched_at","season","projection_enabled"]}, "snapshot_kind": "rebuilt", "source": "openfootball/england; football-data.co.uk; official FPL", "leagues": {}, "season_outlook": {}}
+    for league in ["premier-league","championship","league-one"]:
+        fixtures = matches[(matches.league == league) & (matches.status == "upcoming") & matches.season.eq(season) & (matches.date >= today)].sort_values(['date','kickoff','home_team'],na_position='last')
         cards = []
         forecast_cache = {}
         for fixture_index, fixture in fixtures.iterrows():
             # Forecast all future fixtures from today's information set. Future
             # dates must not artificially age today's team ratings towards the prior.
             forecast_fixture = fixture.copy()
-            forecast_fixture.date = min(fixture.date, pd.Timestamp.now().normalize())
+            forecast_fixture.date = min(fixture.date, today)
             pred = state_prediction(completed, forecast_fixture, probability_sharpness)
             forecast_cache[fixture_index] = pred
             card = {"date": fixture.date.date().isoformat(), "matchweek": int(fixture.matchweek) if pd.notna(fixture.matchweek) else None, "kickoff": fixture.kickoff if pd.notna(fixture.kickoff) else None, "home_team": fixture.home_team, "away_team": fixture.away_team, "prediction_available": bool(pred)}
             if pred:
                 card.update({k: round(v, 4) if isinstance(v, float) else v for k,v in pred.items()})
-                if league == "premier-league" and fixture.date <= pd.Timestamp.now().normalize() + pd.Timedelta(days=14):
+                if league == "premier-league" and fixture.date <= today + pd.Timedelta(days=14):
                     picks = player_predictions(current, priors, fixture, pred["expected_home_goals"], pred["expected_away_goals"])
                     if picks: card["player_predictions"] = picks
             cards.append(card)
         predictions["leagues"][league] = cards
-        if league == "premier-league" and len(fixtures): predictions["season_outlook"][league] = season_outlook(completed, fixtures, league, probability_sharpness, forecast_cache)
-    (OUT / "predictions.json").write_text(json.dumps(predictions, separators=(",", ":"), allow_nan=False), encoding="utf8")
-    # Keep display-only colour configuration beside the generated JSON so the
-    # static frontend never needs a backend or a hard-coded second colour list.
-    (OUT / "team_colours.json").write_text((ROOT / "config" / "team_colours.json").read_text(encoding="utf8"), encoding="utf8")
+        if quality[league]["season_forecast_available"] and len(fixtures): predictions["season_outlook"][league] = season_outlook(completed, fixtures, league, probability_sharpness, forecast_cache)
+    validate_predictions(predictions)
+    out.mkdir(parents=True,exist_ok=True)
+    sources_path=ROOT/'data/match_sources.json'
+    artifacts={'predictions.json':predictions,'evaluation.json':report,'evaluation_fixtures.json':evaluation_rows,
+        'player_report.json':player_report,'data_quality.json':{'coverage':quality,'sources':json.loads(sources_path.read_text()) if sources_path.exists() else {},
+            'input_sha256':{name:hashlib.sha256((ROOT/'data'/name).read_bytes()).hexdigest() for name in ['matches.csv','current_players.csv','player_history.csv'] if (ROOT/'data'/name).exists()}}}
+    # Serialize and validate all outputs before replacing any previously published preview.
+    encoded={name:json.dumps(value,separators=(',',':'),allow_nan=False) for name,value in artifacts.items()}
+    for name,content in encoded.items():
+        temporary=out/(name+'.tmp');temporary.write_text(content,encoding='utf8');temporary.replace(out/name)
+    (out/'team_colours.json').write_text((ROOT/'config/team_colours.json').read_text(encoding='utf8'),encoding='utf8')
     print(f"Wrote {sum(map(len, predictions['leagues'].values()))} upcoming fixtures")
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path);parser.add_argument('--no-compare',action='store_true');args=parser.parse_args()
+    main(args.output,not args.no_compare)
