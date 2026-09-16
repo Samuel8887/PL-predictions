@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
+from datetime import date
 import urllib.request
 from io import BytesIO
 from pathlib import Path
@@ -19,12 +21,14 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 HISTORY_URL = "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/{season}/gws/merged_gw.csv"
 FPL_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
-SEASONS = [f"{year}-{str(year + 1)[-2:]}" for year in range(2016, 2026)]
+SEASONS = [f"{year}-{str(year + 1)[-2:]}" for year in range(2016, date.today().year - (date.today().month < 7))]
 
 
 def player_key(value: str) -> str:
     """A conservative key used only to supplement a player's own recent rates."""
-    return re.sub(r"[^a-z0-9]+", "", str(value).lower())
+    value = re.sub(r"_\d+$", "", str(value))
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "", value.lower())
 
 
 def get_bytes(url: str) -> bytes:

@@ -1,67 +1,76 @@
-# English Football Estimates
+# Touchline — English Football Forecasts
 
-A small, static, educational website that presents league-aware statistical estimates for upcoming English Premier League, Championship, and League One fixtures. It is **not betting advice**. The site intentionally shows no estimate when it lacks enough prior data.
+A dependency-free, responsive dashboard for Premier League, Championship and League One match probabilities, player projections and season simulations.
 
-## Source inspection and format
+## Preview the included snapshot
 
-The project reads the public-domain [openfootball/england](https://github.com/openfootball/england) repository directly. Its top level has a directory for each season (for example `2004-05`, `2025-26`, and `2026-27`). The three files used in each season directory are:
+```sh
+python -m http.server 8000 --directory site
+```
 
-| Competition | File |
-| --- | --- |
-| Premier League | `1-premierleague.txt` |
-| Championship | `2-championship.txt` |
-| League One | `3-league1.txt` |
+Open http://localhost:8000. The included September 10, 2026 match forecasts are **archived outputs from the original model**, clearly labelled in the dashboard. Original player and season projections were withheld because the audit found calculation errors in those outputs. They return after rebuilding with the corrected model. An empty League One view reflects the supplied dataset; fixtures have not been invented.
 
-They are Football.TXT files with a league heading, `Matchday N` headings, date lines, and indented match lines. Historical matches use `Home 2-1 (half-time) Away`; modern files may use `Home v Away 2-1 (half-time)`. Date and kick-off time may be omitted on a continuation line. `scripts/import_data.py` handles both forms and creates `data/matches.csv` with date, season, league, matchweek, teams, stable normalised IDs, goals, and status.
+## Rebuild with current data
 
-Only scored matches dated on or before the build date are marked `completed`; later scored lines are still treated as upcoming. This guard is deliberate protection against future-result leakage.
+Requires Python 3.10+ and Git, plus access to GitHub, raw.githubusercontent.com and fantasy.premierleague.com.
 
-## Model
-
-`scripts/train_predict.py` uses a transparent, league-aware Poisson baseline. For each fixture it uses only matches before that fixture's date (same-day matches are excluded), exponentially downweights older matches with a two-year half-life, and shrinks sparse team rates towards the league average. A team's home attack is blended with its opponent's away defence to get expected home goals; the mirror calculation produces expected away goals. Poisson score probabilities then yield home-win, draw, and away-win estimates.
-
-The win/draw/loss distribution receives one additional calibration step. An exponent is selected on an earlier chronological validation slice and evaluated only on the final held-out slice; it corrects persistent under-confidence without changing expected goals. The current held-out log loss is reported in `site/data/evaluation.json`, alongside the uncalibrated historical-outcome baseline.
-
-For Premier League player estimates, `scripts/import_player_data.py` downloads historical gameweek records from the [vaastav/Fantasy-Premier-League archive](https://github.com/vaastav/Fantasy-Premier-League) (2016-17 onward) and the current public Fantasy Premier League feed. FBref currently blocks automated access from this build environment, so the project does not circumvent that protection or claim that its data was downloaded from FBref. The player forecast uses recent player minutes, goals, assists, xG/xA where present, and a recency-weighted historical prior to allocate the already-modelled team goal expectation across likely starters. It is a performance estimate, not a confirmed-lineup, injury, or betting prediction.
-
-Clicking a Premier League fixture opens two projected squads. The XI is the 11 players with the highest estimated start chance and the next nine players form the projected bench. Each table includes availability-based start chance, minutes, goals, assists, xG, xA, and score/assist chance. These are modelled lineups, not official starting XIs.
-
-The report in `site/data/evaluation.json` uses the final chronological 20% of completed fixtures. It includes accuracy, log loss, Brier score, confidence-bin calibration, and a historical-outcome baseline. This is a baseline for learning, not a claim of predictive superiority.
-
-`config/team_aliases.json` contains explicit safe aliases and `config/team_colours.json` contains optional display accents. The parser only removes a terminal legal-style `FC`/`AFC` suffix and never strips meaningful words such as `United`; aliases are intentional so distinct historical club identities are not merged by accident.
-
-## Run locally
-
-Requires Python 3.10+ and Git.
-
-```powershell
+```sh
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+# macOS / Linux: source .venv/bin/activate
 pip install -r requirements.txt
+python -m unittest discover -s tests -v
 python scripts/import_data.py
 python scripts/import_player_data.py
 python scripts/train_predict.py
 python -m http.server 8000 --directory site
 ```
 
-Open `http://localhost:8000`. For a repeatable historical run, pass `--as-of 2025-06-01` to the importer. To reuse an existing source checkout, use `--source path/to/england`.
+The match importer clones openfootball when its source directory is absent. If reusing a checkout, update that checkout before importing; the importer does not silently overwrite a user's checkout. `--source path/to/england` selects a local source. `--as-of YYYY-MM-DD` limits match-result availability, but **does not provide historical player snapshots**: do not use the current-player importer for a historical player backtest.
 
-## GitHub Pages deployment
+GitHub Pages: choose **Settings → Pages → GitHub Actions**, then push to `main` or run the workflow manually. The daily build installs dependencies, runs regression tests, imports data and generates the static site. The workflow caches Python packages.
 
-The scheduled `.github/workflows/deploy.yml` downloads the source repository, builds JSON, and deploys the `site` directory with the official Pages actions. In GitHub repository settings, set **Pages → Source** to **GitHub Actions** once. Push to `main`, use **Run workflow**, or wait for its daily schedule. The `deploy` job URL is the public site URL.
+## What's changed
 
-## Project structure
+- New Touchline dashboard: responsive cards, competition navigation, all-gameweek team search, summary metrics, method disclosure, explicit loading failures and stale-data notices.
+- Squad tables render only when a match is opened. Unavailable season forecasts have an explicit empty state.
+- A Poisson score grid now extends far enough to retain essentially all probability mass, instead of always stopping at ten goals.
+- Season score sampling uses the calibrated outcome probabilities shown on match cards. Score ratios within each result class are preserved.
+- Exact table ties share probability correctly. Each team's finishing distribution sums to one before display rounding. Ranking is vectorized; only exact ties require individual handling.
+- Forecasts are reused between fixture generation and season simulations. Future forecasts use today's information date rather than artificially aging ratings toward the prior as the fixture date recedes.
+- Home and away shrinkage use their respective scoring baselines. Sparse cross-division histories receive stronger shrinkage; the previous division adjustment was ineffective.
+- Player priors use consistent per-minute units. Player statistics join by row identity instead of rounded floating-point values, which previously caused valid projections to become zero.
+- Eligible starting XIs must fit a plausible formation with exactly one goalkeeper. Known unavailable statuses are excluded instead of being reintroduced to fill a bench. If a full formation is impossible, no complete XI is claimed.
+- Player goal/assist allocation weights estimated playing time. Current availability is used only for fixtures within 14 days; it is not extended across the full season.
+- Player history dates are dynamic. Matching normalizes accents and archive numeric suffixes. Fixtures are deduplicated, and an empty import fails clearly.
+- Compact JSON and no extra frontend framework or asset dependencies.
 
-```
-scripts/import_data.py       # downloader and Football.TXT parser
-scripts/import_player_data.py # historical/current FPL player-stat importer
-scripts/train_predict.py     # leak-safe model, evaluation and JSON output
-config/                      # explicit aliases and display colours
-data/matches.csv             # generated clean data (not required in git)
-site/                        # dependency-free frontend and generated JSON
-.github/workflows/deploy.yml # scheduled Pages build/deploy
-```
+## Model and interpretation
 
-## Roadmap
+The team model remains an interpretable baseline: exponentially weighted home/away scoring and conceding rates, a two-year half-life, an eight-year lookback and shrinkage toward league averages. A geometric blend combines each attack with the opposing defence. Six equivalent prior games are used normally and eighteen for cross-division fallback. The latter is a conservative heuristic, **not a fitted promotion-strength adjustment**.
 
-Keep match estimates first. Future additions can include player minutes/starting probability, goals and assists, xG/xA, shots and chances created, clean-sheet probability, fixture difficulty, injuries/suspensions, Fantasy Premier League point projections, and player form/opponent strength.
+Outcome calibration selects an exponent using earlier chronological validation fixtures. The final chronological 20% is sampled deterministically for evaluation, with at most 600 fixtures. Same-day and future results are excluded from every historical prediction. Log loss, multiclass Brier score, accuracy and confidence bins are reported against a pooled historical-outcome baseline.
+
+Expected goals on the cards are the **underlying Poisson rates**. Calibrating the outcome classes changes the resulting score distribution's mean; these displayed rates are not the post-calibration simulation means. Season outlooks include expected points and an 80% points interval in JSON. The fixed seed makes a build reproducible for identical inputs.
+
+Season ranking uses points, goal difference and goals scored, sharing exact ties evenly. It does not implement head-to-head or playoff rules, points deductions, or uncertainty about future team-strength changes. It requires forecasts for every remaining imported fixture, but cannot know whether the upstream schedule is complete.
+
+Player start chances, minutes and assist allocation are heuristics, not empirically calibrated probabilities. Season totals do not capture recent substitutions, tactical formations or upcoming rotation fully. Injuries and availability depend on the source snapshot. Historical name matching can still miss renamed players or collide for namesakes; stable cross-season player IDs would be preferable. Older missing xG/xA coverage also limits the historical prior.
+
+## Verification and remaining work
+
+See `REVIEW.md` for the audit, verification results and suggested next modelling experiments. Offline regression tests cover the known calculation failures and a complete synthetic build. They establish implementation correctness for those cases, **not improved prediction accuracy**. New held-out performance must be measured after importing the source history.
+
+For numerical details, see [SciPy's Poisson distribution documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html).
+
+## Files
+
+- `scripts/import_data.py`: Football.TXT match parser and importer.
+- `scripts/import_player_data.py`: historical/current FPL player importer.
+- `scripts/train_predict.py`: model, calibration, evaluation and season simulations.
+- `tests/`: offline model and build regression tests.
+- `config/`: team aliases and display colours.
+- `site/`: static frontend and included archived preview.
+- `.github/workflows/deploy.yml`: tested daily build and Pages deployment.
+
+Match source: [openfootball/england](https://github.com/openfootball/england), public domain. Player sources: Fantasy Premier League and [vaastav's archive](https://github.com/vaastav/Fantasy-Premier-League). This is independent educational analysis, not betting advice.

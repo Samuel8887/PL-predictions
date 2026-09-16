@@ -28,7 +28,7 @@ def parse_day(line: str, season: str) -> date | None:
     text = line.strip()
     if not DATE_RE.match(text): return None
     bits = text.split()
-    # Most historical files omit the year. Jan--Jul belongs to season end year.
+    # Most historical files omit the year. Jan--Jun belongs to season end year.
     year = int(bits[-1]) if bits[-1].isdigit() and len(bits[-1]) == 4 else None
     fragment = " ".join(bits[1:-1] if year else bits[1:])
     # Parse against a leap year first so a Feb 29 fixture is accepted.
@@ -78,7 +78,9 @@ def parse_repo(source: Path, build_date: date) -> pd.DataFrame:
                   "matchweek": matchweek, "kickoff": kickoff, "home_team": home, "away_team": away,
                   "home_team_id": team_id(home), "away_team_id": team_id(away), "home_goals": hg if completed else None,
                   "away_goals": ag if completed else None, "status": "completed" if completed else ("upcoming" if current_date >= build_date else "incomplete")})
-    return pd.DataFrame(rows).sort_values(["date", "league", "matchweek"], na_position="last")
+    if not rows:
+        raise ValueError("No fixtures parsed; check the source directory and season format")
+    return pd.DataFrame(rows).drop_duplicates(subset=["league", "season", "home_team_id", "away_team_id", "date"]).sort_values(["date", "league", "matchweek"], na_position="last")
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--source", type=Path, default=ROOT / ".cache" / "england"); p.add_argument("--output", type=Path, default=ROOT / "data" / "matches.csv"); p.add_argument("--as-of", default=date.today().isoformat()); args = p.parse_args()
